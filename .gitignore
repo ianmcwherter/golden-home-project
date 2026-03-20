@@ -1,0 +1,13 @@
+# Never commit credentials
+*CREDENTIALS*
+*.env
+.env.*
+secrets.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
