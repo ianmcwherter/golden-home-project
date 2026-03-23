@@ -1,319 +1,1028 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Golden Home Project — Best Home, Kitchen & Life Upgrades</title>
-  <meta name="description" content="Discover the best home, kitchen, and tech products that actually make your life better. Honest reviews, top picks, and smart finds curated by Golden Home Project.">
-  <meta name="keywords" content="best kitchen gadgets, amazon finds, home upgrades, product reviews, smart home, home organization, tech gadgets">
-  <meta property="og:title" content="Golden Home Project — Best Home, Kitchen & Life Upgrades">
-  <meta property="og:description" content="Curated product picks and honest reviews for your home, kitchen, and life.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://goldenhomeproject.com">
-  <link rel="canonical" href="https://goldenhomeproject.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Home Project | Top-Rated Home Finds From Amazon</title>
+<meta name="description" content="Curated top-rated home products from Amazon. Kitchen, Bathroom, Tech, Bedroom, Home Office & Cleaning essentials hand-picked by Golden Home Project.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --green: #1B5E3B;
+  --green-dark: #154a2f;
+  --green-light: #e8f5e9;
+  --gold: #F5A623;
+  --gold-dark: #d4900e;
+  --white: #FFFFFF;
+  --light-bg: #F5F5F0;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--light-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── STICKY HEADER ── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--green);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 0 16px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-inner {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.header-logo {
+  width: 32px;
+  height: 32px;
+  background: var(--gold);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--white);
+  letter-spacing: -0.3px;
+}
+
+.header-cta {
+  background: var(--gold);
+  color: var(--green-dark);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.header-cta:hover { background: var(--gold-dark); transform: scale(1.03); }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(160deg, var(--green) 0%, #237a4d 50%, var(--green-dark) 100%);
+  padding: 48px 20px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  right: -30%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(245,166,35,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-logo {
+  width: 80px;
+  height: 80px;
+  background: var(--white);
+  border-radius: 20px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+.hero-logo-inner {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.hero-logo-accent {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 24px;
+  height: 24px;
+  background: var(--gold);
+  border-radius: 8px;
+  border: 3px solid var(--green);
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.hero-tagline {
+  font-size: 15px;
+  color: rgba(255,255,255,0.85);
+  font-weight: 400;
+  margin-bottom: 24px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  color: var(--white);
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+.hero-badge svg { flex-shrink: 0; }
+
+/* ── CATEGORY NAV ── */
+.category-nav {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.category-nav a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 24px;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.category-nav a:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-1px);
+}
+
+/* ── MAIN CONTAINER ── */
+.main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ── INSTAGRAM CTA ── */
+.ig-cta {
+  margin: 24px 0;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  color: var(--white);
+}
+
+.ig-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.ig-cta svg { flex-shrink: 0; }
+
+.ig-cta-text {
+  text-align: left;
+}
+
+.ig-cta-text strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.ig-cta-text span {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.ig-cta a {
+  display: inline-block;
+  margin-top: 12px;
+  background: var(--white);
+  color: #c13584;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 24px;
+  border-radius: 24px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ig-cta a:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+/* ── CATEGORY SECTION ── */
+.category-section {
+  margin: 32px 0;
+  scroll-margin-top: 72px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--green);
+}
+
+.category-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--green-light);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.category-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: -0.3px;
+}
+
+.category-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  background: var(--green-light);
+  padding: 4px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+/* ── PRODUCT CARD ── */
+.product-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.product-card:active {
+  transform: translateY(0);
+}
+
+.product-rank {
+  width: 28px;
+  height: 28px;
+  background: var(--light-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.product-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: 2px;
+}
+
+.product-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.product-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.product-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--gold);
+  color: var(--green-dark);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 7px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.product-btn:hover {
+  background: var(--gold-dark);
+  transform: scale(1.05);
+}
+
+.product-btn svg {
+  width: 10px;
+  height: 10px;
+}
+
+/* ── FOOTER ── */
+.footer {
+  margin-top: 40px;
+  padding: 32px 20px;
+  background: var(--green);
+  text-align: center;
+  color: rgba(255,255,255,0.7);
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.footer-tagline {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.footer-social a:hover {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.1);
+}
+
+.footer-social svg { width: 18px; height: 18px; }
+
+.footer-disclosure {
+  font-size: 11px;
+  max-width: 400px;
+  margin: 0 auto 16px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.5);
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+}
+
+.footer-copy span { color: var(--gold); }
+
+/* ── BACK TO TOP ── */
+.back-to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 24px auto;
+  padding: 10px 20px;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+
+.back-to-top:hover {
+  color: var(--green);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* ── DESKTOP ENHANCEMENTS ── */
+@media (min-width: 640px) {
+  .hero h1 { font-size: 36px; }
+  .hero-tagline { font-size: 17px; max-width: 400px; }
+  .hero { padding: 64px 20px 72px; }
+  .header { height: 64px; }
+  .header-title { font-size: 18px; }
+  .category-section { margin: 40px 0; }
+  .product-card { padding: 20px; }
+  .product-name { font-size: 15px; }
+  .product-btn { font-size: 12px; padding: 8px 16px; }
+}
+</style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="site-header">
+<!-- ════ STICKY HEADER ════ -->
+<header class="header">
   <div class="header-inner">
-    <a href="/" class="logo">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      Golden Home Project
+    <a href="#top" class="header-brand">
+      <div class="header-logo">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B5E3B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <span class="header-title">Golden Home Project</span>
     </a>
-    <nav id="mainNav">
-      <a href="#picks">Top Picks</a>
-      <a href="#categories">Categories</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#about">About</a>
-      <a href="https://www.youtube.com/@goldenhomeproject" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://www.instagram.com/Golden_home_project/" target="_blank" rel="noopener" class="nav-cta">Follow Us</a>
-    </nav>
-    <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="https://www.instagram.com/goldenhomeproject/" target="_blank" rel="noopener" class="header-cta">Follow Us</a>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <h1>Products That Actually<br><span>Make Life Better</span></h1>
-    <p>We test and review the best home, kitchen, and tech products so you don't have to. Honest picks, real results.</p>
-    <div class="hero-badges">
-      <span class="badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        500+ Products Tested
-      </span>
-      <span class="badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        Honest Reviews Only
-      </span>
-      <span class="badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        Updated Weekly
-      </span>
+<!-- ════ HERO ════ -->
+<section class="hero" id="top">
+  <div class="hero-logo">
+    <div class="hero-logo-inner">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1B5E3B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
     </div>
-    <a href="#picks" class="hero-cta">See This Week's Top Picks &darr;</a>
+    <div class="hero-logo-accent"></div>
   </div>
+  <h1>Golden Home Project</h1>
+  <p class="hero-tagline">Top-Rated Home Finds From Amazon</p>
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+    Curated picks, updated weekly
+  </div>
+
+  <nav class="category-nav">
+    <a href="#kitchen">&#x1F373; Kitchen</a>
+    <a href="#bathroom">&#x1F6C1; Bathroom</a>
+    <a href="#tech">&#x1F4F1; Tech</a>
+    <a href="#bedroom">&#x1F6CF;&#xFE0F; Bedroom</a>
+    <a href="#office">&#x1F4BB; Office</a>
+    <a href="#cleaning">&#x2728; Cleaning</a>
+  </nav>
 </section>
 
-<!-- CATEGORIES -->
-<section class="categories" id="categories">
-  <div class="container">
-    <h2 class="section-title">Browse by Category</h2>
-    <p class="section-sub">Find the best products for every part of your home and life.</p>
-    <div class="cat-grid">
-      <a href="#kitchen" class="cat-card">
-        <div class="cat-icon">&#127859;</div>
-        <h3>Kitchen</h3>
-        <p>Gadgets & tools</p>
-      </a>
-      <a href="#home" class="cat-card">
-        <div class="cat-icon">&#127968;</div>
-        <h3>Home</h3>
-        <p>Organization & decor</p>
-      </a>
-      <a href="#tech" class="cat-card">
-        <div class="cat-icon">&#128187;</div>
-        <h3>Tech</h3>
-        <p>Gadgets & smart home</p>
-      </a>
-      <a href="#cleaning" class="cat-card">
-        <div class="cat-icon">&#10024;</div>
-        <h3>Cleaning</h3>
-        <p>Products & hacks</p>
-      </a>
-      <a href="#outdoor" class="cat-card">
-        <div class="cat-icon">&#127796;</div>
-        <h3>Outdoor</h3>
-        <p>Garden & patio</p>
-      </a>
-      <a href="#deals" class="cat-card">
-        <div class="cat-icon">&#128176;</div>
-        <h3>Under $25</h3>
-        <p>Budget-friendly finds</p>
-      </a>
+<main class="main">
+
+<!-- ════ INSTAGRAM CTA ════ -->
+<div class="ig-cta">
+  <div class="ig-cta-inner">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    <div class="ig-cta-text">
+      <strong>@goldenhomeproject</strong>
+      <span>New finds every week on Instagram</span>
     </div>
   </div>
-</section>
-
-<!-- TOP PICKS (PRODUCT CARDS) -->
-<section class="top-picks" id="picks">
-  <div class="container">
-    <h2 class="section-title">This Week's Top Picks</h2>
-    <p class="section-sub">Hand-picked products our team tested and loved this week.</p>
-    <div class="product-grid" id="productGrid">
-
-      <div class="product-card">
-        <img src="assets/images/milk-frother.jpg" alt="Zulay Milk Frother" class="product-img" loading="lazy">
-        <div class="product-body">
-          <span class="product-tag">Kitchen</span>
-          <h3>Zulay Powerful Milk Frother</h3>
-          <p class="desc">Handheld foam maker for coffee, lattes, cappuccinos, and matcha. 19,000 RPM motor with a durable stand.</p>
-          <div class="product-footer">
-            <span class="price">$9.99</span>
-            <span class="rating">&#9733; 4.5 (170K+)</span>
-          </div>
-        </div>
-        <a href="https://www.amazon.com/dp/B074YJR8PB?tag=goldenhomep06-20" target="_blank" rel="noopener nofollow sponsored" class="buy-btn">View on Amazon</a>
-      </div>
-
-      <div class="product-card">
-        <img src="assets/images/smart-plug.jpg" alt="Kasa Smart Plug" class="product-img" loading="lazy">
-        <div class="product-body">
-          <span class="product-tag">Smart Home</span>
-          <h3>Kasa Smart Plug Mini (4-Pack)</h3>
-          <p class="desc">Control any device from your phone. Works with Alexa and Google Home. Compact design won't block second outlet.</p>
-          <div class="product-footer">
-            <span class="price">$26.99</span>
-            <span class="rating">&#9733; 4.6 (95K+)</span>
-          </div>
-        </div>
-        <a href="https://www.amazon.com/dp/B091FXLMS8?tag=goldenhomep06-20" target="_blank" rel="noopener nofollow sponsored" class="buy-btn">View on Amazon</a>
-      </div>
-
-      <div class="product-card">
-        <img src="assets/images/can-rack.jpg" alt="SimpleHouseware Stackable Can Rack" class="product-img" loading="lazy">
-        <div class="product-body">
-          <span class="product-tag">Organization</span>
-          <h3>SimpleHouseware Stackable Can Rack Organizer</h3>
-          <p class="desc">Stackable pantry organizer holds up to 36 cans. Sturdy chrome finish. Instant pantry upgrade for under $20.</p>
-          <div class="product-footer">
-            <span class="price">$17.87</span>
-            <span class="rating">&#9733; 4.6 (28K+)</span>
-          </div>
-        </div>
-        <a href="https://www.amazon.com/dp/B00LB06ZSS?tag=goldenhomep06-20" target="_blank" rel="noopener nofollow sponsored" class="buy-btn">View on Amazon</a>
-      </div>
-
-      <div class="product-card">
-        <img src="assets/images/led-lights.jpg" alt="Govee LED Strip Lights" class="product-img" loading="lazy">
-        <div class="product-body">
-          <span class="product-tag">Tech</span>
-          <h3>Govee LED Strip Lights 65.6ft</h3>
-          <p class="desc">WiFi RGB LED lights with app control, music sync, and 64 scenes. Works with Alexa. Transform any room instantly.</p>
-          <div class="product-footer">
-            <span class="price">$14.99</span>
-            <span class="rating">&#9733; 4.5 (110K+)</span>
-          </div>
-        </div>
-        <a href="https://www.amazon.com/dp/B09B7NQT2K?tag=goldenhomep06-20" target="_blank" rel="noopener nofollow sponsored" class="buy-btn">View on Amazon</a>
-      </div>
-
-      <div class="product-card">
-        <img src="assets/images/garlic-press.jpg" alt="OXO Good Grips Garlic Press" class="product-img" loading="lazy">
-        <div class="product-body">
-          <span class="product-tag">Kitchen</span>
-          <h3>OXO Good Grips Garlic Press</h3>
-          <p class="desc">Die-cast zinc with built-in cleaner. Presses unpeeled cloves easily. The last garlic press you'll ever buy.</p>
-          <div class="product-footer">
-            <span class="price">$17.99</span>
-            <span class="rating">&#9733; 4.6 (18K+)</span>
-          </div>
-        </div>
-        <a href="https://www.amazon.com/dp/B00HEZ888K?tag=goldenhomep06-20" target="_blank" rel="noopener nofollow sponsored" class="buy-btn">View on Amazon</a>
-      </div>
-
-      <div class="product-card">
-        <img src="assets/images/carpet-cleaner.jpg" alt="Bissell Little Green Cleaner" class="product-img" loading="lazy">
-        <div class="product-body">
-          <span class="product-tag">Cleaning</span>
-          <h3>Bissell Little Green Portable Carpet Cleaner</h3>
-          <p class="desc">Powerful suction removes tough stains from carpets, upholstery, and car interiors. Compact and easy to use.</p>
-          <div class="product-footer">
-            <span class="price">$123.34</span>
-            <span class="rating">&#9733; 4.5 (80K+)</span>
-          </div>
-        </div>
-        <a href="https://www.amazon.com/dp/B0016HF5GK?tag=goldenhomep06-20" target="_blank" rel="noopener nofollow sponsored" class="buy-btn">View on Amazon</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ARTICLES / REVIEWS -->
-<section class="articles" id="reviews">
-  <div class="container">
-    <h2 class="section-title">Latest Reviews & Guides</h2>
-    <p class="section-sub">In-depth reviews and buying guides to help you make smarter purchases.</p>
-    <div class="article-grid">
-
-      <article class="article-card">
-        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Kitchen gadgets review" class="article-img" loading="lazy">
-        <div class="article-body">
-          <p class="article-meta">Kitchen &bull; March 2026</p>
-          <h3>10 Kitchen Gadgets That Are Actually Worth Your Money</h3>
-          <p>We tested 30+ kitchen gadgets from Amazon so you don't have to. Here are the 10 that earned a permanent spot in our kitchen.</p>
-          <span class="read-more">Read More &rarr;</span>
-        </div>
-      </article>
-
-      <article class="article-card">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop" alt="Home organization guide" class="article-img" loading="lazy">
-        <div class="article-body">
-          <p class="article-meta">Organization &bull; March 2026</p>
-          <h3>The Complete Home Organization Guide (Under $100)</h3>
-          <p>Transform every room in your home with these budget-friendly organization products. No expensive custom systems needed.</p>
-          <span class="read-more">Read More &rarr;</span>
-        </div>
-      </article>
-
-      <article class="article-card">
-        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?w=600&h=400&fit=crop" alt="Smart home setup" class="article-img" loading="lazy">
-        <div class="article-body">
-          <p class="article-meta">Smart Home &bull; March 2026</p>
-          <h3>Smart Home Setup for Beginners: Start Here</h3>
-          <p>A no-nonsense guide to building a smart home that actually works. What to buy first, what to skip, and how to set it all up.</p>
-          <span class="read-more">Read More &rarr;</span>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" style="padding: 70px 0;">
-  <div class="container" style="max-width: 700px; text-align: center;">
-    <h2 class="section-title">About Golden Home Project</h2>
-    <p style="color: var(--text-light); font-size: 1.05rem; margin-bottom: 20px;">We're on a mission to help you find the best products for your home without wasting time or money on things that don't work.</p>
-    <p style="color: var(--text-light); font-size: .95rem; margin-bottom: 14px;">Every product on this site has been researched, tested, and chosen because it genuinely makes life better. We don't feature products we wouldn't use ourselves.</p>
-    <p style="color: var(--text-light); font-size: .95rem;">Follow us on <a href="https://www.instagram.com/Golden_home_project/" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600;">Instagram</a> and <a href="https://www.youtube.com/@goldenhomeproject" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600;">YouTube</a> for daily product finds and video reviews.</p>
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="newsletter">
-  <div class="container">
-    <h2>Get the Best Finds in Your Inbox</h2>
-    <p>Weekly picks, exclusive deals, and product alerts. No spam, ever.</p>
-    <form class="newsletter-form" onsubmit="event.preventDefault(); this.innerHTML='<p style=\'color:#10b981;font-weight:600;padding:14px\'>You\'re in! Check your email.</p>';">
-      <input type="email" placeholder="Enter your email" required>
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="/" class="logo" style="color:#fff;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px;"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          Golden Home Project
-        </a>
-        <p>Curated product picks and honest reviews for your home, kitchen, and life. We test it so you don't have to.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Categories</h4>
-        <a href="#kitchen">Kitchen</a>
-        <a href="#home">Home</a>
-        <a href="#tech">Tech & Smart Home</a>
-        <a href="#cleaning">Cleaning</a>
-        <a href="#outdoor">Outdoor</a>
-      </div>
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="#reviews">Buying Guides</a>
-        <a href="#reviews">Product Reviews</a>
-        <a href="#deals">Deals & Sales</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a href="https://www.instagram.com/Golden_home_project/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.youtube.com/@goldenhomeproject" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://www.tiktok.com/@goldenhomeproject" target="_blank" rel="noopener">TikTok</a>
-        <a href="https://www.pinterest.com/goldenhomeproject/" target="_blank" rel="noopener">Pinterest</a>
-        <a href="mailto:goldenhomeprojectllc@gmail.com">Contact Us</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024–2026 Golden Home Project, LLC. All rights reserved.</p>
-      <div class="social-links">
-        <a href="https://www.instagram.com/Golden_home_project/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-        <a href="https://www.youtube.com/@goldenhomeproject" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
-        <a href="https://www.tiktok.com/@goldenhomeproject" target="_blank" rel="noopener" aria-label="TikTok">TK</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<div class="affiliate-disclosure">
-  <strong>Affiliate Disclosure:</strong> Golden Home Project is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program. When you click our links and make a purchase, we may earn a commission at no extra cost to you.
+  <a href="https://www.instagram.com/goldenhomeproject/" target="_blank" rel="noopener">Follow on Instagram</a>
 </div>
 
-<script>
-// Simple mobile menu toggle
-document.querySelector('.mobile-menu-btn')?.addEventListener('click', () => {
-  document.getElementById('mainNav').classList.toggle('open');
-});
-</script>
+<!-- ════ KITCHEN ════ -->
+<section class="category-section" id="kitchen">
+  <div class="category-header">
+    <div class="category-icon">&#x1F373;</div>
+    <h2 class="category-title">Kitchen</h2>
+    <span class="category-count">5 picks</span>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">1</div>
+    <div class="product-info">
+      <div class="product-name">Electric Milk Frother</div>
+      <div class="product-desc">Barista-quality foam for lattes in seconds</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$14</span>
+      <a href="https://www.amazon.com/dp/B082314NFL?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">2</div>
+    <div class="product-info">
+      <div class="product-name">Silicone Cooking Utensil Set &ndash; 12 Piece</div>
+      <div class="product-desc">Heat-resistant, non-scratch kitchen essentials</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$22</span>
+      <a href="https://www.amazon.com/dp/B08R2X4M3D?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">3</div>
+    <div class="product-info">
+      <div class="product-name">Under-Sink Organizer</div>
+      <div class="product-desc">Adjustable shelving to maximize cabinet space</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$18</span>
+      <a href="https://www.amazon.com/dp/B0CHNL1JYB?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">4</div>
+    <div class="product-info">
+      <div class="product-name">Mini Waffle Maker</div>
+      <div class="product-desc">Compact, non-stick, ready in minutes</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$16</span>
+      <a href="https://www.amazon.com/dp/B01M9I779L?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">5</div>
+    <div class="product-info">
+      <div class="product-name">Magnetic Spice Jars 12-Pack</div>
+      <div class="product-desc">Space-saving jars that stick to any metal surface</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$25</span>
+      <a href="https://www.amazon.com/dp/B07DFM9ZYQ?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ BATHROOM ════ -->
+<section class="category-section" id="bathroom">
+  <div class="category-header">
+    <div class="category-icon">&#x1F6C1;</div>
+    <h2 class="category-title">Bathroom</h2>
+    <span class="category-count">5 picks</span>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">1</div>
+    <div class="product-info">
+      <div class="product-name">Shower Steamers 6-Pack</div>
+      <div class="product-desc">Aromatherapy eucalyptus &amp; lavender steamers</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$16</span>
+      <a href="https://www.amazon.com/dp/B07L5QGF38?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">2</div>
+    <div class="product-info">
+      <div class="product-name">Adhesive Shower Caddy 5-Pack</div>
+      <div class="product-desc">No-drill organizers for shampoo &amp; essentials</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$24</span>
+      <a href="https://www.amazon.com/dp/B0BLSCY6PR?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">3</div>
+    <div class="product-info">
+      <div class="product-name">Waterproof Phone Holder</div>
+      <div class="product-desc">Wall-mount case for shower streaming</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$12</span>
+      <a href="https://www.amazon.com/dp/B0C984YB4M?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">4</div>
+    <div class="product-info">
+      <div class="product-name">Luxury Bath Pillow</div>
+      <div class="product-desc">Ergonomic suction-cup pillow for deep soaks</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$28</span>
+      <a href="https://www.amazon.com/dp/B07TRFBHH1?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">5</div>
+    <div class="product-info">
+      <div class="product-name">LED Motion Sensor Night Light 3-Pack</div>
+      <div class="product-desc">Auto-on warm glow for midnight trips</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$15</span>
+      <a href="https://www.amazon.com/dp/B07C6596ZC?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ TECH ════ -->
+<section class="category-section" id="tech">
+  <div class="category-header">
+    <div class="category-icon">&#x1F4F1;</div>
+    <h2 class="category-title">Tech</h2>
+    <span class="category-count">5 picks</span>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">1</div>
+    <div class="product-info">
+      <div class="product-name">LED Desk Lamp with Wireless Charger</div>
+      <div class="product-desc">Dimmable light + Qi charging in one</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$29</span>
+      <a href="https://www.amazon.com/dp/B07WLQ2BTY?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">2</div>
+    <div class="product-info">
+      <div class="product-name">Bluetooth Tracker Tags 4-Pack</div>
+      <div class="product-desc">Never lose your keys or wallet again</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$25</span>
+      <a href="https://www.amazon.com/dp/B0DS1S2ZDQ?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">3</div>
+    <div class="product-info">
+      <div class="product-name">USB-C Hub Adapter 7-in-1</div>
+      <div class="product-desc">HDMI, USB, SD card &mdash; all in one hub</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$22</span>
+      <a href="https://www.amazon.com/dp/B08BLXG7C1?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">4</div>
+    <div class="product-info">
+      <div class="product-name">Smart Plug 4-Pack</div>
+      <div class="product-desc">Voice-controlled outlets via Alexa or Google</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$23</span>
+      <a href="https://www.amazon.com/dp/B0CL9D9HM4?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">5</div>
+    <div class="product-info">
+      <div class="product-name">Portable Charger 10000mAh</div>
+      <div class="product-desc">Slim power bank with dual USB-C output</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$19</span>
+      <a href="https://www.amazon.com/dp/B08443FJ3W?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ BEDROOM ════ -->
+<section class="category-section" id="bedroom">
+  <div class="category-header">
+    <div class="category-icon">&#x1F6CF;&#xFE0F;</div>
+    <h2 class="category-title">Bedroom</h2>
+    <span class="category-count">5 picks</span>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">1</div>
+    <div class="product-info">
+      <div class="product-name">Silk Pillowcase Set 2-Pack</div>
+      <div class="product-desc">Gentle on skin and hair while you sleep</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$14</span>
+      <a href="https://www.amazon.com/dp/B07BNZWG17?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">2</div>
+    <div class="product-info">
+      <div class="product-name">LED Sunset Lamp</div>
+      <div class="product-desc">Golden-hour ambiance on demand</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$18</span>
+      <a href="https://www.amazon.com/dp/B0925LXDSG?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">3</div>
+    <div class="product-info">
+      <div class="product-name">Blackout Curtain Liners</div>
+      <div class="product-desc">100% light-blocking for deeper sleep</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$22</span>
+      <a href="https://www.amazon.com/dp/B07DRZ31TP?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">4</div>
+    <div class="product-info">
+      <div class="product-name">White Noise Machine</div>
+      <div class="product-desc">30+ soothing sounds for restful nights</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$25</span>
+      <a href="https://www.amazon.com/dp/B087CPCVK9?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">5</div>
+    <div class="product-info">
+      <div class="product-name">Bed Shelf Organizer</div>
+      <div class="product-desc">Clip-on nightstand for phones &amp; remotes</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$16</span>
+      <a href="https://www.amazon.com/dp/B06XCK982P?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ HOME OFFICE ════ -->
+<section class="category-section" id="office">
+  <div class="category-header">
+    <div class="category-icon">&#x1F4BB;</div>
+    <h2 class="category-title">Home Office</h2>
+    <span class="category-count">5 picks</span>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">1</div>
+    <div class="product-info">
+      <div class="product-name">Monitor Stand with Storage</div>
+      <div class="product-desc">Elevate your screen with built-in drawers</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$24</span>
+      <a href="https://www.amazon.com/dp/B07QRXXQ34?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">2</div>
+    <div class="product-info">
+      <div class="product-name">Desk Cable Management Kit</div>
+      <div class="product-desc">Clips, sleeves &amp; trays for a tidy desk</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$12</span>
+      <a href="https://www.amazon.com/dp/B08DG2LY5B?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">3</div>
+    <div class="product-info">
+      <div class="product-name">LED Desk Light Bar</div>
+      <div class="product-desc">Monitor-mounted light that reduces glare</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$28</span>
+      <a href="https://www.amazon.com/dp/B08CXL3YQ8?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">4</div>
+    <div class="product-info">
+      <div class="product-name">Ergonomic Wrist Rest Pad</div>
+      <div class="product-desc">Memory foam support for all-day typing</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$15</span>
+      <a href="https://www.amazon.com/dp/B01A92ETXM?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">5</div>
+    <div class="product-info">
+      <div class="product-name">Desktop Whiteboard Planner</div>
+      <div class="product-desc">Dry-erase board for daily task planning</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$19</span>
+      <a href="https://www.amazon.com/dp/B08SMQPY13?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CLEANING ════ -->
+<section class="category-section" id="cleaning">
+  <div class="category-header">
+    <div class="category-icon">&#x2728;</div>
+    <h2 class="category-title">Cleaning</h2>
+    <span class="category-count">5 picks</span>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">1</div>
+    <div class="product-info">
+      <div class="product-name">Electric Spin Scrubber</div>
+      <div class="product-desc">Cordless power scrubbing for tile &amp; tubs</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$24</span>
+      <a href="https://www.amazon.com/dp/B0B7RSV894?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">2</div>
+    <div class="product-info">
+      <div class="product-name">Vacuum Storage Bags 12-Pack</div>
+      <div class="product-desc">Compress blankets &amp; clothing by 80%</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$18</span>
+      <a href="https://www.amazon.com/dp/B07RSCK4XS?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">3</div>
+    <div class="product-info">
+      <div class="product-name">Fridge Organizer Bins 6-Pack</div>
+      <div class="product-desc">Clear stackable bins for a neat fridge</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$22</span>
+      <a href="https://www.amazon.com/dp/B08RSPW3B8?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">4</div>
+    <div class="product-info">
+      <div class="product-name">Microfiber Mop with Spray</div>
+      <div class="product-desc">Refillable spray mop for hardwood &amp; tile</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$20</span>
+      <a href="https://www.amazon.com/dp/B0CW2GW77B?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+
+  <div class="product-card">
+    <div class="product-rank">5</div>
+    <div class="product-info">
+      <div class="product-name">Drawer Dividers 4-Pack</div>
+      <div class="product-desc">Adjustable bamboo organizers for any drawer</div>
+    </div>
+    <div class="product-right">
+      <span class="product-price">$15</span>
+      <a href="https://www.amazon.com/dp/B07HQMZ7HH?tag=goldenhomep06-20" target="_blank" rel="noopener" class="product-btn">Shop <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ BACK TO TOP ════ -->
+<a href="#top" class="back-to-top">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  Back to top
+</a>
+
+</main>
+
+<!-- ════ FOOTER ════ -->
+<footer class="footer">
+  <div class="footer-brand">Golden Home Project</div>
+  <p class="footer-tagline">Curated home finds you'll actually love.</p>
+
+  <div class="footer-social">
+    <a href="https://www.instagram.com/goldenhomeproject/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@goldenhomeproject" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.7a8.18 8.18 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.13z"/></svg>
+    </a>
+    <a href="https://www.pinterest.com/goldenhomeproject/" target="_blank" rel="noopener" aria-label="Pinterest">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+    </a>
+    <a href="mailto:hello@goldenhomeproject.com" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+    </a>
+  </div>
+
+  <p class="footer-disclosure">As an Amazon Associate, Golden Home Project earns from qualifying purchases. All prices shown are approximate and subject to change.</p>
+  <p class="footer-copy">&copy; 2025 <span>Golden Home Project LLC</span>. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
