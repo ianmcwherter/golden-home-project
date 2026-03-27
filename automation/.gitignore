@@ -2,6 +2,9 @@
 logs/ig_session.json
 logs/fb_cookies.pkl
 logs/posting_log.json
+logs/yt_client_secret.json
+logs/yt_token.json
+logs/*_client_secret*.json
 __pycache__/
 *.pyc
 .env
