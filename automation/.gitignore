@@ -1,0 +1,7 @@
+# Never commit credentials or sessions
+logs/ig_session.json
+logs/fb_cookies.pkl
+logs/posting_log.json
+__pycache__/
+*.pyc
+.env
