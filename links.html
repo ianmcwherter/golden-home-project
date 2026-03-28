@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Home Project | Shop Our Finds</title>
+<meta name="description" content="Shop all Golden Home Project product recommendations. Curated affordable Amazon finds for your home, kitchen, tech, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --green: #1B5E3B;
+  --green-dark: #154a2f;
+  --green-light: #e8f5e9;
+  --gold: #F5A623;
+  --gold-dark: #d4900e;
+  --white: #FFFFFF;
+  --light-bg: #F5F5F0;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-muted: #888;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--light-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+.page-wrapper {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+/* Profile Header */
+.profile-header {
+  text-align: center;
+  padding: 32px 0 24px;
+}
+
+.profile-avatar {
+  width: 88px;
+  height: 88px;
+  background: var(--green);
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  box-shadow: 0 4px 16px rgba(27,94,59,0.3);
+}
+
+.profile-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--green);
+  margin-bottom: 4px;
+}
+
+.profile-tagline {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.profile-stats span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Link Cards */
+.links-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  text-decoration: none;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.link-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.link-card:active {
+  transform: scale(0.98);
+}
+
+.link-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--green-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.link-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.link-title {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.link-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.link-arrow {
+  color: var(--text-muted);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* Section Headings */
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--text-muted);
+  margin: 20px 0 8px;
+  padding-left: 4px;
+}
+
+/* Homepage Button */
+.home-btn {
+  display: block;
+  text-align: center;
+  background: var(--green);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  margin-top: 24px;
+  transition: background 0.2s;
+}
+
+.home-btn:hover {
+  background: var(--green-dark);
+}
+
+/* Footer */
+.links-footer {
+  text-align: center;
+  padding: 32px 0 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.links-footer a {
+  color: var(--green);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Disclaimer */
+.affiliate-note {
+  text-align: center;
+  font-size: 10px;
+  color: var(--text-muted);
+  padding: 0 20px 16px;
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- Profile Header -->
+  <div class="profile-header">
+    <div class="profile-avatar">&#127968;</div>
+    <div class="profile-name">Golden Home Project</div>
+    <div class="profile-tagline">Top-rated home finds from Amazon</div>
+  </div>
+
+  <!-- Links -->
+  <div class="links-section">
+
+    <div class="section-label">Latest Posts</div>
+
+    <a href="/products/post-030.html" class="link-card">
+      <div class="link-icon">&#128218;</div>
+      <div class="link-text">
+        <div class="link-title">5 Office Supplies Under $15</div>
+        <div class="link-subtitle">Post 030 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <a href="/products/post-029.html" class="link-card">
+      <div class="link-icon">&#127793;</div>
+      <div class="link-text">
+        <div class="link-title">5 Plant Parent Essentials Under $20</div>
+        <div class="link-subtitle">Post 029 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <a href="/products/post-028.html" class="link-card">
+      <div class="link-icon">&#127918;</div>
+      <div class="link-text">
+        <div class="link-title">5 Gaming Accessories Under $25</div>
+        <div class="link-subtitle">Post 028 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <a href="/products/post-027.html" class="link-card">
+      <div class="link-icon">&#128705;</div>
+      <div class="link-text">
+        <div class="link-title">5 Bathroom Spa Essentials Under $20</div>
+        <div class="link-subtitle">Post 027 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <a href="/products/post-026.html" class="link-card">
+      <div class="link-icon">&#128274;</div>
+      <div class="link-text">
+        <div class="link-title">5 Home Security Upgrades Under $25</div>
+        <div class="link-subtitle">Post 026 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <a href="/products/post-025.html" class="link-card">
+      <div class="link-icon">&#9749;</div>
+      <div class="link-text">
+        <div class="link-title">5 Coffee &amp; Tea Lover Finds Under $20</div>
+        <div class="link-subtitle">Post 025 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <a href="/products/post-024.html" class="link-card">
+      <div class="link-icon">&#128090;</div>
+      <div class="link-text">
+        <div class="link-title">5 Closet Organization Finds Under $20</div>
+        <div class="link-subtitle">Post 024 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <a href="/products/post-023.html" class="link-card">
+      <div class="link-icon">&#128170;</div>
+      <div class="link-text">
+        <div class="link-title">5 Fitness Essentials Under $20</div>
+        <div class="link-subtitle">Post 023 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <a href="/products/post-022.html" class="link-card">
+      <div class="link-icon">&#127968;</div>
+      <div class="link-text">
+        <div class="link-title">5 Smart Home Devices Under $30</div>
+        <div class="link-subtitle">Post 022 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <a href="/products/post-021.html" class="link-card">
+      <div class="link-icon">&#9728;</div>
+      <div class="link-text">
+        <div class="link-title">5 Outdoor/Patio Upgrades Under $25</div>
+        <div class="link-subtitle">Post 021 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <div class="section-label">More Finds</div>
+
+    <a href="/products/post-020.html" class="link-card">
+      <div class="link-icon">&#127873;</div>
+      <div class="link-text">
+        <div class="link-title">Gift Ideas Under $15</div>
+        <div class="link-subtitle">Post 020 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <a href="/products/post-019.html" class="link-card">
+      <div class="link-icon">&#128161;</div>
+      <div class="link-text">
+        <div class="link-title">Lighting Upgrades Under $20</div>
+        <div class="link-subtitle">Post 019 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <a href="/products/post-018.html" class="link-card">
+      <div class="link-icon">&#9992;</div>
+      <div class="link-text">
+        <div class="link-title">Travel Essentials Under $15</div>
+        <div class="link-subtitle">Post 018 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <a href="/products/post-017.html" class="link-card">
+      <div class="link-icon">&#128054;</div>
+      <div class="link-text">
+        <div class="link-title">Pet Owner Essentials Under $25</div>
+        <div class="link-subtitle">Post 017 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <a href="/products/post-016.html" class="link-card">
+      <div class="link-icon">&#128090;</div>
+      <div class="link-text">
+        <div class="link-title">Laundry Hacks Under $20</div>
+        <div class="link-subtitle">Post 016 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <a href="/products/post-015.html" class="link-card">
+      <div class="link-icon">&#128663;</div>
+      <div class="link-text">
+        <div class="link-title">Car Accessories Under $20</div>
+        <div class="link-subtitle">Post 015 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+    <a href="/products/post-014.html" class="link-card">
+      <div class="link-icon">&#127860;</div>
+      <div class="link-text">
+        <div class="link-title">Kitchen Tools TikTok Made Famous</div>
+        <div class="link-subtitle">Post 014 &mdash; 5 products</div>
+      </div>
+      <div class="link-arrow">&#8250;</div>
+    </a>
+
+  </div>
+
+  <a href="/" class="home-btn">Visit goldenhomeproject.com</a>
+
+  <div class="links-footer">
+    &copy; 2024 <a href="/">Golden Home Project</a>
+  </div>
+
+  <div class="affiliate-note">
+    As an Amazon Associate, we earn from qualifying purchases. Prices are accurate at time of posting and may change.
+  </div>
+
+</div>
+
+</body>
+</html>
