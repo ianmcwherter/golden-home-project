@@ -206,37 +206,74 @@ body {
   opacity: 1;
 }
 
+.product-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
 .product-rank {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 32px;
   height: 32px;
+  min-width: 32px;
   border-radius: 8px;
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
   color: var(--dark);
   font-weight: 700;
   font-size: 14px;
-  margin-bottom: 16px;
+  margin-top: 4px;
+}
+
+.product-image-link {
+  flex-shrink: 0;
+}
+
+.product-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  padding: 8px;
+  transition: transform 0.3s var(--transition);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
 }
 
 .product-details {
-  margin-bottom: 16px;
+  flex: 1;
+  min-width: 0;
 }
 
 .product-name {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 17px;
   color: var(--text-primary);
   line-height: 1.3;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .product-price {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--gold);
   letter-spacing: -0.02em;
+}
+
+@media (max-width: 480px) {
+  .product-image {
+    width: 80px;
+    height: 80px;
+  }
+  .product-top {
+    gap: 12px;
+  }
 }
 
 .buy-btn {
@@ -389,10 +426,15 @@ body {
 
   <div class="products-list">
     <div class="product-card">
-      <div class="product-rank">1</div>
-      <div class="product-details">
-        <h3 class="product-name">Shower Steamers Aromatherapy 12-Pack</h3>
-        <div class="product-price">$14.99</div>
+      <div class="product-top">
+        <div class="product-rank">1</div>
+        <a href="https://www.amazon.com/dp/B0CMR5JNWP?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="product-image-link">
+          <img src="https://m.media-amazon.com/images/P/B0CMR5JNWP.01._SCLZZZZZZZ_SX300_.jpg" alt="Shower Steamers Aromatherapy 12-Pack" class="product-image" loading="lazy" onerror="this.style.display='none'">
+        </a>
+        <div class="product-details">
+          <h3 class="product-name">Shower Steamers Aromatherapy 12-Pack</h3>
+          <div class="product-price">$14.99</div>
+        </div>
       </div>
       <a href="https://www.amazon.com/dp/B0CMR5JNWP?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="buy-btn">
         <span class="buy-btn-text">Shop on Amazon</span>
@@ -400,10 +442,15 @@ body {
       </a>
     </div>
     <div class="product-card">
-      <div class="product-rank">2</div>
-      <div class="product-details">
-        <h3 class="product-name">Bamboo Bath Tray Expandable</h3>
-        <div class="product-price">$19.99</div>
+      <div class="product-top">
+        <div class="product-rank">2</div>
+        <a href="https://www.amazon.com/dp/B0CKVJ7RPL?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="product-image-link">
+          <img src="https://m.media-amazon.com/images/P/B0CKVJ7RPL.01._SCLZZZZZZZ_SX300_.jpg" alt="Bamboo Bath Tray Expandable" class="product-image" loading="lazy" onerror="this.style.display='none'">
+        </a>
+        <div class="product-details">
+          <h3 class="product-name">Bamboo Bath Tray Expandable</h3>
+          <div class="product-price">$19.99</div>
+        </div>
       </div>
       <a href="https://www.amazon.com/dp/B0CKVJ7RPL?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="buy-btn">
         <span class="buy-btn-text">Shop on Amazon</span>
@@ -411,10 +458,15 @@ body {
       </a>
     </div>
     <div class="product-card">
-      <div class="product-rank">3</div>
-      <div class="product-details">
-        <h3 class="product-name">Scalp Massager Shampoo Brush</h3>
-        <div class="product-price">$7.99</div>
+      <div class="product-top">
+        <div class="product-rank">3</div>
+        <a href="https://www.amazon.com/dp/B0CPNJ8LKR?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="product-image-link">
+          <img src="https://m.media-amazon.com/images/P/B0CPNJ8LKR.01._SCLZZZZZZZ_SX300_.jpg" alt="Scalp Massager Shampoo Brush" class="product-image" loading="lazy" onerror="this.style.display='none'">
+        </a>
+        <div class="product-details">
+          <h3 class="product-name">Scalp Massager Shampoo Brush</h3>
+          <div class="product-price">$7.99</div>
+        </div>
       </div>
       <a href="https://www.amazon.com/dp/B0CPNJ8LKR?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="buy-btn">
         <span class="buy-btn-text">Shop on Amazon</span>
@@ -422,10 +474,15 @@ body {
       </a>
     </div>
     <div class="product-card">
-      <div class="product-rank">4</div>
-      <div class="product-details">
-        <h3 class="product-name">Turkish Cotton Washcloths 12-Pack</h3>
-        <div class="product-price">$12.99</div>
+      <div class="product-top">
+        <div class="product-rank">4</div>
+        <a href="https://www.amazon.com/dp/B0CNWM6TJX?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="product-image-link">
+          <img src="https://m.media-amazon.com/images/P/B0CNWM6TJX.01._SCLZZZZZZZ_SX300_.jpg" alt="Turkish Cotton Washcloths 12-Pack" class="product-image" loading="lazy" onerror="this.style.display='none'">
+        </a>
+        <div class="product-details">
+          <h3 class="product-name">Turkish Cotton Washcloths 12-Pack</h3>
+          <div class="product-price">$12.99</div>
+        </div>
       </div>
       <a href="https://www.amazon.com/dp/B0CNWM6TJX?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="buy-btn">
         <span class="buy-btn-text">Shop on Amazon</span>
@@ -433,10 +490,15 @@ body {
       </a>
     </div>
     <div class="product-card">
-      <div class="product-rank">5</div>
-      <div class="product-details">
-        <h3 class="product-name">LED Shower Head Color Changing</h3>
-        <div class="product-price">$15.99</div>
+      <div class="product-top">
+        <div class="product-rank">5</div>
+        <a href="https://www.amazon.com/dp/B0CLJ5KWRN?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="product-image-link">
+          <img src="https://m.media-amazon.com/images/P/B0CLJ5KWRN.01._SCLZZZZZZZ_SX300_.jpg" alt="LED Shower Head Color Changing" class="product-image" loading="lazy" onerror="this.style.display='none'">
+        </a>
+        <div class="product-details">
+          <h3 class="product-name">LED Shower Head Color Changing</h3>
+          <div class="product-price">$15.99</div>
+        </div>
       </div>
       <a href="https://www.amazon.com/dp/B0CLJ5KWRN?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="buy-btn">
         <span class="buy-btn-text">Shop on Amazon</span>
