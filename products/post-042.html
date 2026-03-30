@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Things My Therapist Told Me to Buy | Golden Home Project</title>
+<meta name="description" content="5 therapist-recommended wellness products — light therapy lamp, weighted blanket, gratitude journal, sound machine & aromatherapy diffuser. All on Amazon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #d4a745;
+  --gold-light: #e8c76a;
+  --gold-dark: #b8912e;
+  --dark: #0a0a0a;
+  --dark-secondary: #1a1a2e;
+  --dark-card: #141428;
+  --dark-surface: #111122;
+  --dark-border: rgba(212, 167, 69, 0.15);
+  --gold-glow: rgba(212, 167, 69, 0.08);
+  --text-primary: #f0ece4;
+  --text-secondary: #a8a4a0;
+  --text-muted: #6b6860;
+  --white: #ffffff;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+.nav { position: sticky; top: 0; z-index: 1000; background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--dark-border); padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: center; }
+.nav-inner { max-width: 680px; width: 100%; display: flex; align-items: center; gap: 16px; }
+.back-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 10px; background: var(--dark-card); border: 1px solid var(--dark-border); color: var(--gold); text-decoration: none; font-size: 18px; transition: all 0.3s var(--transition); flex-shrink: 0; }
+.back-btn:hover { background: var(--gold-glow); border-color: var(--gold); }
+.nav-brand { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 16px; color: var(--text-primary); text-decoration: none; letter-spacing: -0.02em; }
+.nav-brand span { color: var(--gold); }
+.page-wrapper { max-width: 680px; margin: 0 auto; padding: 0 20px 60px; }
+.post-hero { text-align: center; padding: 48px 0 40px; position: relative; }
+.post-hero::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.post-category { display: inline-block; padding: 6px 16px; border-radius: 20px; background: var(--gold-glow); border: 1px solid var(--dark-border); color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; }
+.post-icon { font-size: 48px; margin-bottom: 16px; display: block; }
+.post-title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 32px; line-height: 1.2; letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 12px; }
+.post-meta { font-size: 14px; color: var(--text-muted); font-weight: 400; }
+.post-meta strong { color: var(--gold); font-weight: 600; }
+.products-list { display: flex; flex-direction: column; gap: 16px; padding-top: 8px; }
+.product-card { background: var(--dark-card); border: 1px solid var(--dark-border); border-radius: var(--radius); padding: 24px; transition: all 0.4s var(--transition); position: relative; overflow: hidden; }
+.product-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-glow), transparent); opacity: 0; transition: opacity 0.4s var(--transition); }
+.product-card:hover { border-color: rgba(212, 167, 69, 0.3); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 20px var(--gold-glow); }
+.product-card:hover::before { opacity: 1; }
+.product-top { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+.product-rank { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; min-width: 32px; border-radius: 8px; background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--dark); font-weight: 700; font-size: 14px; margin-top: 4px; }
+.product-image-link { flex-shrink: 0; }
+.product-image { width: 100px; height: 100px; object-fit: contain; border-radius: var(--radius-sm); background: var(--white); padding: 8px; transition: transform 0.3s var(--transition); }
+.product-card:hover .product-image { transform: scale(1.05); }
+.product-details { flex: 1; min-width: 0; }
+.product-name { font-weight: 600; font-size: 17px; color: var(--text-primary); line-height: 1.3; margin-bottom: 8px; }
+.product-price { font-size: 22px; font-weight: 700; color: var(--gold); letter-spacing: -0.02em; }
+@media (max-width: 480px) { .product-image { width: 80px; height: 80px; } .product-top { gap: 12px; } }
+.buy-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 16px 24px; border-radius: var(--radius-sm); background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--dark); text-decoration: none; font-weight: 700; font-size: 15px; letter-spacing: 0.02em; transition: all 0.3s var(--transition); position: relative; overflow: hidden; }
+.buy-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); transition: left 0.5s var(--transition); }
+.buy-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(212, 167, 69, 0.3); }
+.buy-btn:hover::before { left: 100%; }
+.buy-btn:active { transform: scale(0.98); }
+.buy-btn-arrow { font-size: 18px; transition: transform 0.3s var(--transition); }
+.buy-btn:hover .buy-btn-arrow { transform: translateX(3px); }
+.page-footer { text-align: center; padding: 48px 0 0; }
+.footer-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+.footer-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s var(--transition); }
+.footer-btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--dark); }
+.footer-btn-primary:hover { box-shadow: 0 4px 16px rgba(212, 167, 69, 0.3); transform: translateY(-1px); }
+.footer-btn-secondary { background: var(--dark-card); border: 1px solid var(--dark-border); color: var(--text-primary); }
+.footer-btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+.footer-brand { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+.footer-brand a { color: var(--gold); text-decoration: none; font-weight: 500; }
+.affiliate-note { font-size: 11px; color: var(--text-muted); line-height: 1.6; padding: 0 20px; max-width: 420px; margin: 0 auto; }
+@media (max-width: 480px) { .post-title { font-size: 26px; } .product-card { padding: 20px; } .product-name { font-size: 16px; } .product-price { font-size: 20px; } .page-wrapper { padding: 0 16px 40px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/links.html" class="back-btn">&larr;</a>
+    <a href="/" class="nav-brand">Golden <span>Home</span> Project</a>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <div class="post-hero">
+    <span class="post-category">Wellness</span>
+    <span class="post-icon">&#128156;</span>
+    <h1 class="post-title">Things My Therapist Told Me to Buy</h1>
+    <p class="post-meta">Post <strong>042</strong> &mdash; 5 curated finds</p>
+  </div>
+
+  <div class="products-list">
+    <div class="product-card">
+      <div class="product-top">
+        <div class="product-rank">1</div>
+        <a href="https://www.amazon.com/dp/B0BWNBVGRT?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="product-image-link">
+          <img src="https://m.media-amazon.com/images/P/B0BWNBVGRT.01._SCLZZZZZZZ_SX300_.jpg" alt="Verilux HappyLight VT43 10000 Lux" class="product-image" loading="lazy" onerror="this.style.display='none'">
+        </a>
+        <div class="product-details">
+          <h3 class="product-name">Verilux HappyLight VT43 10000 Lux</h3>
+          <div class="product-price">$35.99</div>
+        </div>
+      </div>
+      <a href="https://www.amazon.com/dp/B0BWNBVGRT?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="buy-btn">
+        <span class="buy-btn-text">Shop on Amazon</span>
+        <span class="buy-btn-arrow">&rarr;</span>
+      </a>
+    </div>
+    <div class="product-card">
+      <div class="product-top">
+        <div class="product-rank">2</div>
+        <a href="https://www.amazon.com/dp/B09B24PD3L?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="product-image-link">
+          <img src="https://m.media-amazon.com/images/P/B09B24PD3L.01._SCLZZZZZZZ_SX300_.jpg" alt="YnM Weighted Blanket 60x80 15lbs" class="product-image" loading="lazy" onerror="this.style.display='none'">
+        </a>
+        <div class="product-details">
+          <h3 class="product-name">YnM Weighted Blanket 60x80 15lbs</h3>
+          <div class="product-price">$34.99</div>
+        </div>
+      </div>
+      <a href="https://www.amazon.com/dp/B09B24PD3L?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="buy-btn">
+        <span class="buy-btn-text">Shop on Amazon</span>
+        <span class="buy-btn-arrow">&rarr;</span>
+      </a>
+    </div>
+    <div class="product-card">
+      <div class="product-top">
+        <div class="product-rank">3</div>
+        <a href="https://www.amazon.com/dp/B0BVN3HYSC?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="product-image-link">
+          <img src="https://m.media-amazon.com/images/P/B0BVN3HYSC.01._SCLZZZZZZZ_SX300_.jpg" alt="The Five Minute Journal" class="product-image" loading="lazy" onerror="this.style.display='none'">
+        </a>
+        <div class="product-details">
+          <h3 class="product-name">The Five Minute Journal</h3>
+          <div class="product-price">$24.99</div>
+        </div>
+      </div>
+      <a href="https://www.amazon.com/dp/B0BVN3HYSC?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="buy-btn">
+        <span class="buy-btn-text">Shop on Amazon</span>
+        <span class="buy-btn-arrow">&rarr;</span>
+      </a>
+    </div>
+    <div class="product-card">
+      <div class="product-top">
+        <div class="product-rank">4</div>
+        <a href="https://www.amazon.com/dp/B07FSLMTFJ?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="product-image-link">
+          <img src="https://m.media-amazon.com/images/P/B07FSLMTFJ.01._SCLZZZZZZZ_SX300_.jpg" alt="Hatch Rest Sound Machine" class="product-image" loading="lazy" onerror="this.style.display='none'">
+        </a>
+        <div class="product-details">
+          <h3 class="product-name">Hatch Rest Sound Machine</h3>
+          <div class="product-price">$39.99</div>
+        </div>
+      </div>
+      <a href="https://www.amazon.com/dp/B07FSLMTFJ?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="buy-btn">
+        <span class="buy-btn-text">Shop on Amazon</span>
+        <span class="buy-btn-arrow">&rarr;</span>
+      </a>
+    </div>
+    <div class="product-card">
+      <div class="product-top">
+        <div class="product-rank">5</div>
+        <a href="https://www.amazon.com/dp/B0BF3VP1JJ?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="product-image-link">
+          <img src="https://m.media-amazon.com/images/P/B0BF3VP1JJ.01._SCLZZZZZZZ_SX300_.jpg" alt="InnoGear Aromatherapy Diffuser" class="product-image" loading="lazy" onerror="this.style.display='none'">
+        </a>
+        <div class="product-details">
+          <h3 class="product-name">InnoGear Aromatherapy Diffuser</h3>
+          <div class="product-price">$15.99</div>
+        </div>
+      </div>
+      <a href="https://www.amazon.com/dp/B0BF3VP1JJ?tag=goldenhomep06-20" target="_blank" rel="noopener noreferrer" class="buy-btn">
+        <span class="buy-btn-text">Shop on Amazon</span>
+        <span class="buy-btn-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-actions">
+      <a href="/links.html" class="footer-btn footer-btn-primary">View All Posts</a>
+      <a href="/" class="footer-btn footer-btn-secondary">Visit Homepage</a>
+    </div>
+    <div class="footer-brand">&copy; 2026 <a href="/">Golden Home Project, LLC</a></div>
+    <p class="affiliate-note">As an Amazon Associate, we earn from qualifying purchases. Prices are accurate at time of posting and may change.</p>
+  </div>
+
+</div>
+
+</body>
+</html>

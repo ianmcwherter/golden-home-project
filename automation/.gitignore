@@ -5,6 +5,8 @@ logs/posting_log.json
 logs/yt_client_secret.json
 logs/yt_token.json
 logs/*_client_secret*.json
+logs/meta_config.json
+logs/meta_tokens.json
 __pycache__/
 *.pyc
 .env

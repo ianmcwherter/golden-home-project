@@ -1,0 +1,36 @@
+name: GHP Daily Email Monitor
+
+on:
+  schedule:
+    # Run every day at 8am ET (12:00 UTC)
+    - cron: '0 12 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  email-monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Monitor Emails & Respond to Brand Deals
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are the Communications Manager for Golden Home Project LLC.
+
+            Check the Gmail inbox for goldenhomeprojectllc@gmail.com for:
+            1. NEW brand partnership offers (from Impact.com, CJ Affiliate, Awin, or direct outreach)
+            2. Affiliate program updates or optimization requests
+            3. Account alerts or verification needs
+            4. Any emails requiring a response
+
+            For each actionable email:
+            - Summarize what it is and what action is needed
+            - If it's a brand deal, evaluate the commission rate and relevance to home products
+            - Draft a professional reply (email only, no phone/zoom calls)
+            - NEVER delete any emails
+
+            Save a daily report to reports/email-report-$(date +%Y-%m-%d).md
+          max_turns: 20

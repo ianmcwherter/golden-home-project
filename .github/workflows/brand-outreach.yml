@@ -1,0 +1,40 @@
+name: GHP Brand Outreach
+
+on:
+  schedule:
+    # Run every Tuesday at 10am ET (14:00 UTC)
+    - cron: '0 14 * * 2'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  brand-outreach:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Proactive Brand Outreach
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are the Business Development Manager for Golden Home Project LLC.
+
+            Proactively reach out to home product brands for affiliate partnerships:
+
+            1. Research 5 trending home product brands on Amazon that we don't already partner with
+            2. Find their affiliate/partnership email addresses
+            3. Draft professional outreach emails offering to feature their products
+            4. Include our stats: goldenhomeproject.com, @golden_home_project on Instagram
+            5. Mention our multi-platform presence (Instagram, Facebook, TikTok, YouTube)
+
+            Email template should be:
+            - Professional but warm
+            - Highlight our niche (curated home product recommendations)
+            - Mention our growing audience
+            - Ask about affiliate program or sponsored content opportunities
+            - Keep all communication to email only (no phone/zoom)
+            - NEVER delete any emails
+
+            Save outreach log to reports/outreach-$(date +%Y-%m-%d).md
+          max_turns: 20
