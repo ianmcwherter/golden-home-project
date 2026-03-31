@@ -1,0 +1,54 @@
+name: GHP Daily YouTube Poster
+
+# Runs at noon ET (17:00 UTC) every day
+# Posts 1 pre-generated transformation reel to YouTube
+# IG Reels posted on Saturdays only
+# NO Claude API needed — pure Python + YouTube Data API
+
+on:
+  schedule:
+    - cron: '0 17 * * *'
+  workflow_dispatch:
+
+jobs:
+  post-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install google-auth google-auth-oauthlib google-api-python-client requests
+
+      - name: Write credentials
+        env:
+          YT_TOKEN_JSON: ${{ secrets.YT_TOKEN_JSON }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          IG_BUSINESS_ACCOUNT_ID: ${{ secrets.IG_BUSINESS_ACCOUNT_ID }}
+        run: |
+          echo "$YT_TOKEN_JSON" > /tmp/yt_token.json
+          echo "{\"page_access_token\": \"$META_ACCESS_TOKEN\", \"ig_business_account_id\": \"$IG_BUSINESS_ACCOUNT_ID\"}" > /tmp/meta_tokens.json
+
+      - name: Post today's video
+        env:
+          AMAZON_ASSOCIATE_TAG: ${{ secrets.AMAZON_ASSOCIATE_TAG }}
+        run: |
+          python3 automation/github_daily_poster.py \
+            --yt-token /tmp/yt_token.json \
+            --meta-token /tmp/meta_tokens.json \
+            --associate-tag "$AMAZON_ASSOCIATE_TAG"
+
+      - name: Commit posting log
+        run: |
+          git config user.name "GHP Bot"
+          git config user.email "goldenhomeprojectllc@gmail.com"
+          git add automation/logs/ || true
+          git diff --staged --quiet || git commit -m "Daily post log $(date +%Y-%m-%d)"
+          git push || true
