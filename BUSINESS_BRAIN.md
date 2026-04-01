@@ -62,7 +62,8 @@
 | Impact | Syruvia Syrups | 20% | Active | ACCEPTED 2026-03-31 — highest commission rate |
 | Impact | HermanRx | $250 CPA | Declined | Off-niche (telehealth/GLP-1) |
 | Impact | Best Choice Products | 15% + free product | Pre-approved | Home niche (baskets, garden, benches) — JOIN |
-| CJ | AliExpress | 5.8% | Invited | Home goods overlap — accept and integrate |
+| CJ | AliExpress | 5.8% | Accepted | Reply SENT 2026-03-31 — home goods overlap |
+| Impact | Rewarx (AI photo studio) | 50% | Reply sent 2026-03-31 | Highest commission! Registered at rewarx.com, awaiting credits |
 | Awin | Various | TBD | Pending | Check for home brand invitations |
 | Direct | Canoly (3-in-1 juicer) | TBD | Reply sent 2026-03-31 | April 30 IG Reel, free sample, awaiting details |
 
@@ -76,7 +77,7 @@
 | April Shorts 001-013, 015 | ✅ Generated + in repo | /videos/transformation/ |
 | April Shorts 014, 016 | ✅ Generated + in repo | /videos/transformation/ |
 | April Shorts posting | ✅ Automated | GitHub Actions daily-poster.yml |
-| Long-form video (Kitchen) | ❌ Not started | Highest revenue priority |
+| Long-form video (Kitchen) | ✅ Script + generator ready | automation/longform/ — 7min, 17 affiliate links, April 8 |
 | Long-form video (Apt tour) | ❌ Not started | April 22 scheduled |
 
 ---
@@ -88,7 +89,7 @@
 | Instagram | @goldenhomeproject | Meta Graph API, IG ID: 17841444356554286 |
 | Amazon Associates | goldenhomep06-20 | Dashboard: affiliate.amazon.com |
 | Impact.com | goldenhomeprojectllc@gmail.com | Syruvia ACTIVE (20%), Best Choice pre-approved |
-| CJ Affiliate | goldenhomeprojectllc@gmail.com | Pending: AliExpress join |
+| CJ Affiliate | goldenhomeprojectllc@gmail.com | AliExpress ACCEPTED (5.8%) |
 | Awin | goldenhomeprojectllc@gmail.com | Pending: review invitations |
 | Pexels | goldenhomeprojectllc@gmail.com | API key in .env |
 
@@ -144,14 +145,21 @@
 - Syruvia contract pending acceptance on Impact.com (20% commission — high priority)
 - All secrets added to GitHub Actions
 
-### 2026-W14 (week of 2026-04-01) — Opus 4.6 session
+### 2026-W14 (week of 2026-04-01) — Opus 4.6 sessions
 - Syruvia contract ACCEPTED on Impact.com (20% commission — our highest rate)
 - Canoly collaboration reply SENT (April 30 IG Reel, free sample)
+- Syruvia thank-you reply SENT to David at sales@syruvia.com
+- AliExpress/CJ acceptance reply SENT to April Yang (5.8% commission, CID 7711902)
+- HermanRx decline SENT to Mary (off-niche telehealth — stay focused on home)
+- Rewarx AI photo studio partnership reply SENT to Keble (50% commission via Impact!)
 - 3 cloud agents updated with BUSINESS_BRAIN.md-centered prompts (daily email, weekly strategy+outreach, weekly affiliate)
 - GitHub Actions daily poster VERIFIED: workflow correct, all 16 videos in repo, first run April 1 noon ET
 - Old failed workflows confirmed cleaned up (only daily-poster.yml remains)
 - Best Choice Products identified as pre-approved on Impact.com (15% + free product, perfect home niche)
 - trans_014 and trans_016 confirmed in repo (all 16 complete)
+- Long-form Kitchen Makeover video PLANNED: 7min, 7 sections, 29 frames, 17 affiliate links + Syruvia integration
+- Kitchen Makeover script + video generator created in automation/longform/
+- All email drafts cleared (0 remaining)
 
 ---
 
@@ -160,9 +168,12 @@
 - [x] Send Canoly reply — DONE 2026-03-31 (awaiting sample + commission details)
 - [x] Set up cloud agents — DONE 2026-03-31 (3 agents: daily email, weekly strategy, weekly affiliate)
 - [ ] Join Best Choice Products on Impact.com (15% + free product, HOME NICHE)
-- [ ] Accept AliExpress on CJ Affiliate (5.8% commission, huge product catalog)
-- [ ] Check Awin pending invitations
-- [ ] Generate + post long-form "Kitchen Makeover" video (April 8 — highest revenue)
+- [x] Accept AliExpress on CJ Affiliate — DONE 2026-03-31 (reply sent, 5.8% commission)
+- [x] Send HermanRx decline — DONE 2026-03-31 (off-niche, stay focused on home)
+- [x] Accept Rewarx partnership — DONE 2026-03-31 (50% commission via Impact, registered at rewarx.com)
+- [x] Plan Kitchen Makeover long-form video — DONE 2026-03-31 (script + generator in automation/longform/)
+- [ ] Check Awin pending invitations (login required)
+- [ ] Generate Kitchen Makeover video frames + audio (run generate_kitchen_makeover.py)
 - [ ] Retry IG posts 061-070 (rate limit should be clear)
 - [ ] Create Syruvia-featured kitchen content (20% commission — prioritize)
 
