@@ -59,11 +59,12 @@
 | Platform | Brand | Commission | Status | Notes |
 |----------|-------|------------|--------|-------|
 | Amazon | All home categories | 3-8% | Active | Tag: goldenhomep06-20 |
-| Impact | Syruvia Syrups | 20% | PENDING ACCEPTANCE | Contract proposed by David — accept ASAP |
+| Impact | Syruvia Syrups | 20% | Active | ACCEPTED 2026-03-31 — highest commission rate |
 | Impact | HermanRx | $250 CPA | Declined | Off-niche (telehealth/GLP-1) |
+| Impact | Best Choice Products | 15% + free product | Pre-approved | Home niche (baskets, garden, benches) — JOIN |
 | CJ | AliExpress | 5.8% | Invited | Home goods overlap — accept and integrate |
 | Awin | Various | TBD | Pending | Check for home brand invitations |
-| Direct | Canoly (3-in-1 juicer) | TBD | Draft reply sent | April 30 deadline, IG collab, sample available |
+| Direct | Canoly (3-in-1 juicer) | TBD | Reply sent 2026-03-31 | April 30 IG Reel, free sample, awaiting details |
 
 ---
 
@@ -73,7 +74,7 @@
 | Posts 001-060 | ✅ Published | YouTube + FB + IG |
 | Posts 061-070 | ✅ YouTube published | IG rate-limited (retry) |
 | April Shorts 001-013, 015 | ✅ Generated + in repo | /videos/transformation/ |
-| April Shorts 014, 016 | 🔄 Generating | Local machine |
+| April Shorts 014, 016 | ✅ Generated + in repo | /videos/transformation/ |
 | April Shorts posting | ✅ Automated | GitHub Actions daily-poster.yml |
 | Long-form video (Kitchen) | ❌ Not started | Highest revenue priority |
 | Long-form video (Apt tour) | ❌ Not started | April 22 scheduled |
@@ -86,7 +87,7 @@
 | YouTube | goldenhomeprojectllc@gmail.com | OAuth token in yt_token.json |
 | Instagram | @goldenhomeproject | Meta Graph API, IG ID: 17841444356554286 |
 | Amazon Associates | goldenhomep06-20 | Dashboard: affiliate.amazon.com |
-| Impact.com | goldenhomeprojectllc@gmail.com | Pending: Syruvia contract |
+| Impact.com | goldenhomeprojectllc@gmail.com | Syruvia ACTIVE (20%), Best Choice pre-approved |
 | CJ Affiliate | goldenhomeprojectllc@gmail.com | Pending: AliExpress join |
 | Awin | goldenhomeprojectllc@gmail.com | Pending: review invitations |
 | Pexels | goldenhomeprojectllc@gmail.com | API key in .env |
@@ -97,9 +98,8 @@
 | Agent | Frequency | Primary Job | Reads | Writes |
 |-------|-----------|-------------|-------|--------|
 | Email Monitor | Daily 8am ET | Brand deals, affiliate alerts | BUSINESS_BRAIN.md | affiliate partnerships table, email log |
-| Trend Research | Mondays 8am ET | Competitor research, content ideas | BUSINESS_BRAIN.md | content strategy, weekly trend report |
+| Strategy & Outreach | Mondays 8am ET | Trend research + brand pitches | BUSINESS_BRAIN.md | content strategy, outreach drafts |
 | Affiliate Optimizer | Thursdays 10am ET | Revenue optimization, commission tracking | BUSINESS_BRAIN.md | affiliate partnerships table, revenue metrics |
-| Brand Outreach | Tuesdays 10am ET | Proactive brand pitches | BUSINESS_BRAIN.md | outreach drafts, partnership pipeline |
 | GitHub Actions Poster | Daily noon ET | Post pre-generated content | /videos/transformation/ | posting logs |
 
 ---
@@ -144,17 +144,27 @@
 - Syruvia contract pending acceptance on Impact.com (20% commission — high priority)
 - All secrets added to GitHub Actions
 
+### 2026-W14 (week of 2026-04-01) — Opus 4.6 session
+- Syruvia contract ACCEPTED on Impact.com (20% commission — our highest rate)
+- Canoly collaboration reply SENT (April 30 IG Reel, free sample)
+- 3 cloud agents updated with BUSINESS_BRAIN.md-centered prompts (daily email, weekly strategy+outreach, weekly affiliate)
+- GitHub Actions daily poster VERIFIED: workflow correct, all 16 videos in repo, first run April 1 noon ET
+- Old failed workflows confirmed cleaned up (only daily-poster.yml remains)
+- Best Choice Products identified as pre-approved on Impact.com (15% + free product, perfect home niche)
+- trans_014 and trans_016 confirmed in repo (all 16 complete)
+
 ---
 
 ## NEXT ACTIONS (priority order)
-- [ ] Accept Syruvia contract on Impact.com (20% commission, home-adjacent — syrups for kitchen)
+- [x] Accept Syruvia contract on Impact.com — DONE 2026-03-31 (20% commission!)
+- [x] Send Canoly reply — DONE 2026-03-31 (awaiting sample + commission details)
+- [x] Set up cloud agents — DONE 2026-03-31 (3 agents: daily email, weekly strategy, weekly affiliate)
+- [ ] Join Best Choice Products on Impact.com (15% + free product, HOME NICHE)
 - [ ] Accept AliExpress on CJ Affiliate (5.8% commission, huge product catalog)
-- [ ] Send Canoly draft reply (April 30 deadline, IG collab, free sample)
 - [ ] Check Awin pending invitations
-- [ ] Generate + post long-form "Kitchen Makeover" video (April 8)
+- [ ] Generate + post long-form "Kitchen Makeover" video (April 8 — highest revenue)
 - [ ] Retry IG posts 061-070 (rate limit should be clear)
-- [ ] Add trans_014 and trans_016 to repo when generation completes
-- [ ] Set up 4 cloud agents at claude.ai/code/scheduled
+- [ ] Create Syruvia-featured kitchen content (20% commission — prioritize)
 
 ---
 *This file is automatically updated by agents. Human review recommended weekly.*
