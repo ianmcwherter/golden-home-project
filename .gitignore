@@ -3,6 +3,11 @@
 *.env
 .env.*
 secrets.*
+automation/logs/*_token*.json
+automation/logs/*_secret*.json
+automation/logs/*_config*.json
+automation/logs/meta_*.json
+automation/logs/yt_*.json
 
 # OS files
 .DS_Store

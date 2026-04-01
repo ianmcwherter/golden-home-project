@@ -25,7 +25,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install google-auth google-auth-oauthlib google-api-python-client requests
+          pip install google-auth google-auth-oauthlib google-api-python-client requests jq
 
       - name: Write credentials
         env:
@@ -34,7 +34,12 @@ jobs:
           IG_BUSINESS_ACCOUNT_ID: ${{ secrets.IG_BUSINESS_ACCOUNT_ID }}
         run: |
           echo "$YT_TOKEN_JSON" > /tmp/yt_token.json
-          echo "{\"page_access_token\": \"$META_ACCESS_TOKEN\", \"ig_business_account_id\": \"$IG_BUSINESS_ACCOUNT_ID\"}" > /tmp/meta_tokens.json
+          # Use jq to safely construct JSON — prevents injection if token contains special chars
+          jq -n \
+            --arg tok "$META_ACCESS_TOKEN" \
+            --arg id "$IG_BUSINESS_ACCOUNT_ID" \
+            '{"page_access_token": $tok, "ig_business_account_id": $id}' \
+            > /tmp/meta_tokens.json
 
       - name: Post today's video
         env:
@@ -49,6 +54,10 @@ jobs:
         run: |
           git config user.name "GHP Bot"
           git config user.email "goldenhomeprojectllc@gmail.com"
-          git add automation/logs/ || true
+          git add automation/logs/gh_post_*.json || true
           git diff --staged --quiet || git commit -m "Daily post log $(date +%Y-%m-%d)"
           git push || true
+
+      - name: Cleanup credentials
+        if: always()
+        run: rm -f /tmp/yt_token.json /tmp/meta_tokens.json

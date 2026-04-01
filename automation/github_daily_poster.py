@@ -20,7 +20,7 @@ import os
 import sys
 import time
 import requests
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 # ── Paths (relative to repo root in GitHub Actions checkout)
@@ -52,13 +52,13 @@ APRIL_CALENDAR = [
     {"date": "2026-04-07", "title": "I Finally Made My Bedroom Feel Like a Hotel",
      "products": [{"asin": "B07XVFBXWF", "name": "Linen Duvet Cover Set (Queen)", "price": "$54.99"},
                   {"asin": "B08JFV6MXQ", "name": "Throw Pillow Covers 4-pack", "price": "$19.99"},
-                  {"asin": "B09JKRP8X4", "name": "Bedside Tray Organizer", "price": "$16.99"}]},
+                  {"asin": "B08KGWF5ZM", "name": "Bedside Tray Organizer", "price": "$16.99"}]},
     {"date": "2026-04-09", "title": "I Tested $25 vs $120 Air Purifiers. Here's the Truth.",
      "products": [{"asin": "B07VXKXR8H", "name": "LEVOIT Air Purifier (small room)", "price": "$24.99"},
                   {"asin": "B083PGLT37", "name": "LEVOIT Core 300 Air Purifier", "price": "$99.99"}]},
     {"date": "2026-04-11", "title": "My Nightstand Was a Disaster. $28 Fixed It.", "ig": True,
      "products": [{"asin": "B09G9FKWG3", "name": "Bedside Charging Station (3-port)", "price": "$19.99"},
-                  {"asin": "B09JKRP8X4", "name": "Bamboo Bedside Tray", "price": "$14.99"}]},
+                  {"asin": "B07WH4KBQB", "name": "Bamboo Bedside Tray", "price": "$14.99"}]},
     {"date": "2026-04-12", "title": "Room by Room Ep 2: The Junk Drawer Doesn't Have to Exist",
      "products": [{"asin": "B08B3NWK45", "name": "Interlocking Drawer Organizer Set", "price": "$18.99"},
                   {"asin": "B07Y9BKMYF", "name": "Cable Management Box", "price": "$19.99"}]},
@@ -83,7 +83,7 @@ APRIL_CALENDAR = [
     {"date": "2026-04-25", "title": "My Desk Setup Went From Chaos to Clean in 30 Minutes", "ig": True,
      "products": [{"asin": "B07Y9BKMYF", "name": "Cable Management Box (large)", "price": "$19.99"},
                   {"asin": "B09FBQR8XL", "name": "Monitor Stand with Storage Drawer", "price": "$39.99"},
-                  {"asin": "B09JKRP8X4", "name": "Desktop Catch-All Organizer Tray", "price": "$14.99"}]},
+                  {"asin": "B08F4YK8B7", "name": "Desktop Catch-All Organizer Tray", "price": "$14.99"}]},
     {"date": "2026-04-26", "title": "Room by Room Ep 4: The Bedroom Closet That Finally Makes Sense",
      "products": [{"asin": "B07FFXVDXG", "name": "Velvet Non-Slip Hangers (50-pack)", "price": "$19.99"},
                   {"asin": "B07X5JQPZM", "name": "Closet Shelf Dividers (6-pack)", "price": "$14.99"},
@@ -104,6 +104,10 @@ def today_str():
 def refresh_yt_token(token_path):
     with open(token_path) as f:
         t = json.load(f)
+    required = {"token_uri", "client_id", "client_secret", "refresh_token"}
+    missing = required - t.keys()
+    if missing:
+        raise RuntimeError(f"YT token JSON missing keys: {missing}")
     resp = requests.post(t["token_uri"], data={
         "client_id": t["client_id"], "client_secret": t["client_secret"],
         "refresh_token": t["refresh_token"], "grant_type": "refresh_token",
@@ -111,7 +115,7 @@ def refresh_yt_token(token_path):
     result = resp.json()
     if "access_token" in result:
         t["token"] = result["access_token"]
-        t["expiry"] = (datetime.utcnow() + timedelta(seconds=result.get("expires_in", 3600))).isoformat() + "Z"
+        t["expiry"] = (datetime.now(timezone.utc) + timedelta(seconds=result.get("expires_in", 3600))).isoformat()
         with open(token_path, "w") as f:
             json.dump(t, f, indent=2)
         return t
@@ -211,13 +215,22 @@ def post_ig_reel(video_index, caption, meta_tokens):
         print(f"  [IG] Container failed: {container}")
         return None
 
+    status_code = None
     for _ in range(18):
         time.sleep(10)
         s = requests.get(f"{api}/{container['id']}",
                          params={"fields": "status_code", "access_token": token},
                          timeout=15).json()
-        if s.get("status_code") == "FINISHED":
+        status_code = s.get("status_code")
+        if status_code == "FINISHED":
             break
+        if status_code == "ERROR":
+            print(f"  [IG] Container processing failed: {s}")
+            return None
+
+    if status_code != "FINISHED":
+        print(f"  [IG] Container never finished (last status: {status_code})")
+        return None
 
     pub = requests.post(f"{api}/{ig_id}/media_publish",
                         data={"creation_id": container["id"], "access_token": token},
