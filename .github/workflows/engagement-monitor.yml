@@ -1,0 +1,192 @@
+name: GHP Engagement Monitor Agent
+
+# Runs daily at 2:00 PM ET (19:00 UTC)
+# Tracks YouTube analytics, monitors comments, tracks growth metrics
+
+on:
+  schedule:
+    - cron: '0 19 * * *'
+  workflow_dispatch:
+
+jobs:
+  monitor-engagement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install google-auth google-auth-oauthlib google-api-python-client requests
+
+      - name: Write YouTube credentials
+        env:
+          YT_TOKEN_JSON: ${{ secrets.YT_TOKEN_JSON }}
+        run: |
+          echo "$YT_TOKEN_JSON" > /tmp/yt_token.json
+
+      - name: Run Engagement Monitor
+        env:
+          AMAZON_ASSOCIATE_TAG: ${{ secrets.AMAZON_ASSOCIATE_TAG }}
+        run: |
+          python3 << 'PYTHON'
+          import json, os
+          from datetime import datetime
+          from googleapiclient.discovery import build
+          from google.oauth2.credentials import Credentials
+
+          date_str = datetime.now().strftime("%Y-%m-%d")
+          log_dir = "automation/logs"
+          os.makedirs(log_dir, exist_ok=True)
+
+          report = {
+              "date": date_str,
+              "agent": "engagement-monitor",
+              "metrics": {},
+              "top_videos": [],
+              "comments_responded": 0,
+              "actions_taken": []
+          }
+
+          try:
+              # Load YouTube credentials
+              creds = Credentials.from_authorized_user_file("/tmp/yt_token.json")
+              youtube = build("youtube", "v3", credentials=creds)
+
+              # Get channel stats
+              channels = youtube.channels().list(
+                  part="statistics,snippet",
+                  mine=True
+              ).execute()
+
+              if channels.get("items"):
+                  stats = channels["items"][0]["statistics"]
+                  report["metrics"] = {
+                      "subscribers": int(stats.get("subscriberCount", 0)),
+                      "total_views": int(stats.get("viewCount", 0)),
+                      "total_videos": int(stats.get("videoCount", 0))
+                  }
+                  print(f"Channel: {stats.get('subscriberCount', '?')} subs, "
+                        f"{stats.get('viewCount', '?')} views, "
+                        f"{stats.get('videoCount', '?')} videos")
+
+              # Get recent videos performance
+              search = youtube.search().list(
+                  part="id,snippet",
+                  forMine=True,
+                  type="video",
+                  order="date",
+                  maxResults=10
+              ).execute()
+
+              video_ids = [item["id"]["videoId"] for item in search.get("items", [])
+                          if item["id"].get("videoId")]
+
+              if video_ids:
+                  videos = youtube.videos().list(
+                      part="statistics,snippet",
+                      id=",".join(video_ids)
+                  ).execute()
+
+                  for video in videos.get("items", []):
+                      vstats = video["statistics"]
+                      report["top_videos"].append({
+                          "title": video["snippet"]["title"][:60],
+                          "views": int(vstats.get("viewCount", 0)),
+                          "likes": int(vstats.get("likeCount", 0)),
+                          "comments": int(vstats.get("commentCount", 0))
+                      })
+
+                  # Sort by views
+                  report["top_videos"].sort(key=lambda x: x["views"], reverse=True)
+                  print(f"\nTop 5 videos by views:")
+                  for v in report["top_videos"][:5]:
+                      print(f"  {v['views']:>6} views | {v['title']}")
+
+              # Check for new comments to respond to
+              for vid in video_ids[:5]:
+                  try:
+                      comments = youtube.commentThreads().list(
+                          part="snippet",
+                          videoId=vid,
+                          maxResults=5,
+                          order="time"
+                      ).execute()
+
+                      for thread in comments.get("items", []):
+                          comment = thread["snippet"]["topLevelComment"]["snippet"]
+                          # Log new comments (responding requires more complex logic)
+                          if comment.get("publishedAt", "").startswith(date_str):
+                              report["actions_taken"].append(
+                                  f"New comment on video: {comment['textDisplay'][:50]}"
+                              )
+                  except Exception:
+                      pass  # Some videos may have comments disabled
+
+              # Update BUSINESS_BRAIN.md metrics
+              brain_path = "BUSINESS_BRAIN.md"
+              if os.path.exists(brain_path):
+                  with open(brain_path, "r") as f:
+                      brain = f.read()
+
+                  metrics = report["metrics"]
+                  if metrics:
+                      # Update subscriber count
+                      import re
+                      brain = re.sub(
+                          r'\| YouTube subscribers \| [\d,]+ \|',
+                          f'| YouTube subscribers | {metrics["subscribers"]:,} |',
+                          brain
+                      )
+                      brain = re.sub(
+                          r'\| YouTube total views \| [\d,]+ \|',
+                          f'| YouTube total views | {metrics["total_views"]:,} |',
+                          brain
+                      )
+                      brain = re.sub(
+                          r'\| YouTube videos \| [\d,]+ \|',
+                          f'| YouTube videos | {metrics["total_videos"]:,} |',
+                          brain
+                      )
+                      # Update date
+                      brain = re.sub(
+                          r'(\| YouTube subscribers \| [\d,]+ \|) .+ \|',
+                          f'\\1 {date_str} |',
+                          brain
+                      )
+
+                      with open(brain_path, "w") as f:
+                          f.write(brain)
+                      report["actions_taken"].append("Updated BUSINESS_BRAIN.md metrics")
+                      print(f"\nUpdated BUSINESS_BRAIN.md with latest metrics")
+
+          except Exception as e:
+              report["error"] = str(e)
+              print(f"Error: {e}")
+
+          # Save daily report
+          log_path = f"{log_dir}/engagement_{date_str}.json"
+          with open(log_path, "w") as f:
+              json.dump(report, f, indent=2)
+          print(f"\nReport saved: {log_path}")
+          PYTHON
+
+      - name: Commit engagement report
+        run: |
+          git config user.name "GHP Engagement Bot"
+          git config user.email "goldenhomeprojectllc@gmail.com"
+          git add automation/logs/ BUSINESS_BRAIN.md || true
+          git diff --staged --quiet || git commit -m "Engagement report: $(date +%Y-%m-%d)"
+          git push || true
+
+      - name: Cleanup credentials
+        if: always()
+        run: rm -f /tmp/yt_token.json
