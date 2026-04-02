@@ -96,12 +96,19 @@
 ---
 
 ## AGENT ROLES & RESPONSIBILITIES
-| Agent | Frequency | Primary Job | Reads | Writes |
-|-------|-----------|-------------|-------|--------|
-| Email Monitor | Daily 8am ET | Brand deals, affiliate alerts | BUSINESS_BRAIN.md | affiliate partnerships table, email log |
-| Strategy & Outreach | Mondays 8am ET | Trend research + brand pitches | BUSINESS_BRAIN.md | content strategy, outreach drafts |
-| Affiliate Optimizer | Thursdays 10am ET | Revenue optimization, commission tracking | BUSINESS_BRAIN.md | affiliate partnerships table, revenue metrics |
-| GitHub Actions Poster | Daily noon ET | Post pre-generated content | /videos/transformation/ | posting logs |
+### Claude Code Web (3 slots — daily, full send authority)
+| Agent | Frequency | Primary Job | Authority |
+|-------|-----------|-------------|-----------|
+| Email Monitor | Daily 8am ET | Brand deals, reply to partners, affiliate alerts | SEND emails, accept/decline deals |
+| Strategy & Outreach | Daily 9am ET | Trend research, brand pitches, outreach emails | SEND outreach, pitch brands |
+| Affiliate Optimizer | Daily 10am ET | Revenue optimization, commission tracking, join programs | JOIN programs, SEND partner emails |
+
+### GitHub Actions (permanent, unlimited)
+| Agent | Frequency | Primary Job | Workflow |
+|-------|-----------|-------------|----------|
+| Daily Poster | Daily noon ET | Post pre-generated Shorts to YouTube | daily-poster.yml |
+| Content Generator | Daily 11am ET | Generate transformation video scripts | content-generator.yml |
+| Engagement Monitor | Daily 2pm ET | YouTube analytics, comment tracking, metrics | engagement-monitor.yml |
 
 ---
 
@@ -109,16 +116,19 @@
 - Pollinations.ai: reliable at <3 concurrent requests
 - Ken Burns animation + text overlays: professional-looking output
 - edge-tts voiceover: natural, free, multiple voices
-- GitHub Actions posting: live and scheduled
+- GitHub Actions posting: live and scheduled (daily-poster.yml VERIFIED working)
 - Pexels API: now integrated for BEFORE frames (real footage > AI)
-- Gmail MCP: connected, can read/draft email
+- Gmail MCP: connected, agents have FULL SEND authority
+- Claude Code web agents: 3 daily agents running with full autonomy
+- GitHub Actions agents: Content Generator + Engagement Monitor deployed
+- All 16 April Shorts in repo and auto-posting daily
 
 ## WHAT'S NOT WORKING / NEEDS FIX
 - Instagram/Facebook: 0 followers, API rate-limited (bulk posting)
 - No affiliate revenue confirmed (check Associates dashboard)
-- Long-form videos not created (highest revenue potential, not started)
 - IG rate limit: retry posts 061-070 after rate limit clears
-- trans_014 and trans_016: still generating
+- Best Choice Products: Join button needs manual click on Impact.com
+- Claude Code web: 3 daily session limit — can't add more agents there
 
 ---
 
@@ -153,6 +163,7 @@
 - HermanRx decline SENT to Mary (off-niche telehealth — stay focused on home)
 - Rewarx AI photo studio partnership reply SENT to Keble (50% commission via Impact!)
 - 3 cloud agents updated with BUSINESS_BRAIN.md-centered prompts (daily email, weekly strategy+outreach, weekly affiliate)
+- ALL 3 cloud agents upgraded: daily frequency + FULL SEND authority (not draft-only)
 - GitHub Actions daily poster VERIFIED: workflow correct, all 16 videos in repo, first run April 1 noon ET
 - Old failed workflows confirmed cleaned up (only daily-poster.yml remains)
 - Best Choice Products identified as pre-approved on Impact.com (15% + free product, perfect home niche)
@@ -160,13 +171,19 @@
 - Long-form Kitchen Makeover video PLANNED: 7min, 7 sections, 29 frames, 17 affiliate links + Syruvia integration
 - Kitchen Makeover script + video generator created in automation/longform/
 - All email drafts cleared (0 remaining)
+- Content Generator agent deployed to GitHub Actions (daily 11am ET)
+- Engagement Monitor agent deployed to GitHub Actions (daily 2pm ET)
+- Claude Code web hit 3-daily-session limit — remaining agents on GitHub Actions
+- 4 Canva YouTube thumbnail candidates generated for Kitchen Makeover video
+- Kitchen Makeover video: 3:14 duration, 17 affiliate links, $148 product cost, $0 production cost
 
 ---
 
 ## NEXT ACTIONS (priority order)
 - [x] Accept Syruvia contract on Impact.com — DONE 2026-03-31 (20% commission!)
 - [x] Send Canoly reply — DONE 2026-03-31 (awaiting sample + commission details)
-- [x] Set up cloud agents — DONE 2026-03-31 (3 agents: daily email, weekly strategy, weekly affiliate)
+- [x] Set up cloud agents — DONE 2026-03-31 (3 Claude Code web + 2 GitHub Actions = 5 total agents)
+- [x] Upgrade all agents to daily + full SEND authority — DONE 2026-04-01
 - [ ] Join Best Choice Products on Impact.com (15% + free product, HOME NICHE)
 - [x] Accept AliExpress on CJ Affiliate — DONE 2026-03-31 (reply sent, 5.8% commission)
 - [x] Send HermanRx decline — DONE 2026-03-31 (off-niche, stay focused on home)
