@@ -53,6 +53,28 @@
 - "I was skeptical. I was wrong."
 - "I use this every single morning."
 
+### Spring 2026 Trend Insights (updated 2026-04-02):
+- **Floral kitchen accents** trending hard — florals on appliances, cookware, Dutch ovens
+- **Glass-enclosed pantries** — turning storage into a design feature (great for transformation content)
+- **Warm textured minimalism** — layered textures, natural wood tones, calm elevated spaces
+- **Multi-functional appliances** — "do more with less" resonates with our budget audience
+- **Epoxy flooring transformations** — viral on TikTok, satisfying before/after format
+- **Electric food composters** (Lomi) — trending as kitchen staple, eco-angle
+
+### Competitor Analysis (updated 2026-04-02):
+- Lone Fox (1.5M subs): budget thrifted makeovers, rolling storage hacks
+- Kristen McGowan (1.8M subs): interior design hacks, buying trip content
+- Alexandra Gater (600K subs): millennial rental makeovers, affordable focus
+- At Home With Nikki (650K subs): storage, organization, efficient spaces
+- **Our edge**: specific dollar amounts + affiliate links in every video. Competitors rarely show exact costs.
+
+### Proposed Video Concepts (April 2026):
+1. **"I transformed my kitchen with florals. $67."** — ride the floral trend, show before (bland) → after (floral accents: towels, Dutch oven, canisters)
+2. **"Glass pantry hack. $120. My friends think I renovated."** — DIY glass-front pantry door + organization products
+3. **"I tested a $35 BISSELL vs my old vacuum."** — comparison format, high engagement, BISSELL affiliate tie-in
+4. **"Epoxy countertop. $89. Same kitchen."** — ride TikTok's epoxy trend, transformation format
+5. **"5 things I use every morning. All under $25."** — daily utility format with multiple affiliate links
+
 ---
 
 ## AFFILIATE PARTNERSHIPS (active)
@@ -62,10 +84,12 @@
 | Impact | Syruvia Syrups | 20% | Active | ACCEPTED 2026-03-31 — highest commission rate |
 | Impact | HermanRx | $250 CPA | Declined | Off-niche (telehealth/GLP-1) |
 | Impact | Best Choice Products | 15% + free product | Pre-approved | Home niche (baskets, garden, benches) — JOIN |
-| CJ | AliExpress | 5.8% | Accepted | Reply SENT 2026-03-31 — home goods overlap |
-| Impact | Rewarx (AI photo studio) | 50% | Reply sent 2026-03-31 | Highest commission! Registered at rewarx.com, awaiting credits |
-| Awin | Various | TBD | Pending | Check for home brand invitations |
+| CJ | AliExpress | 9% interior/garden | Active | April Yang confirmed: 9% on interior accessories + garden supplies, 3-day cookie, 90-day lock |
+| Impact | Rewarx (AI photo studio) | 50% | Account issue | Keble can't find our account — reply sent 2026-04-02 to troubleshoot |
+| Awin | OKUN (US) | TBD | Invited | HOME IMPROVEMENT — on-niche! Accept via Awin (needs browser login) |
+| Impact | BISSELL | up to 8.4% | Outreach sent 2026-04-02 | Home cleaning — perfect for transformation "first step" content |
 | Direct | Canoly (3-in-1 juicer) | TBD | Reply sent 2026-03-31 | April 30 IG Reel, free sample, awaiting details |
+| Impact | AARP | $35+ CPA | Skipped | Off-niche (senior membership org) — not home content |
 
 ---
 
@@ -79,6 +103,10 @@
 | April Shorts posting | ✅ Automated | GitHub Actions daily-poster.yml |
 | Long-form video (Kitchen) | ✅ Script + generator ready | automation/longform/ — 7min, 17 affiliate links, April 8 |
 | Long-form video (Apt tour) | ❌ Not started | April 22 scheduled |
+| Apr 27 Short (Ep 5 Entryway) | ✅ Script ready | automation/scripts/script-2026-04-27.py |
+| Apr 28 Short (Syruvia kitchen) | ✅ Script ready | automation/scripts/script-2026-04-28.py — 20% commission partner |
+| Apr 29 Short (Bathroom comparison) | ✅ Script ready | automation/scripts/script-2026-04-29.py |
+| Apr 30 Short (Canoly IG Reel) | ✅ Script ready | automation/scripts/script-2026-04-30.py — partner commitment |
 
 ---
 
@@ -176,6 +204,28 @@
 - Claude Code web hit 3-daily-session limit — remaining agents on GitHub Actions
 - 4 Canva YouTube thumbnail candidates generated for Kitchen Makeover video
 - Kitchen Makeover video: 3:14 duration, 17 affiliate links, $148 product cost, $0 production cost
+- EMAIL MONITOR RUN 2026-04-02:
+  - April Yang (CJ): AliExpress interior/garden = 9% commission (upgrade from 5.8%!) — reply drafted
+  - Rewarx account issue: Keble can't find our account to add credits — reply drafted to troubleshoot
+  - OKUN (US) invited us on Awin: HOME IMPROVEMENT brand — on-niche, needs browser accept
+  - AARP via Impact: $35+ CPA — off-niche (senior membership), skipped
+  - Amazon Associates: Operating Agreement update effective Apr 14, 2026 — informational only
+  - Kings Camo (CJ): off-niche (hunting/camo), skipped
+- STRATEGY & OUTREACH RUN 2026-04-02:
+  - BISSELL outreach pitch DRAFTED (up to 8.4% on Impact, home cleaning — on-niche)
+  - Spring 2026 trend research: floral accents, glass pantries, warm minimalism, epoxy floors, multi-functional appliances
+  - Competitor analysis: Lone Fox (1.5M), Kristen McGowan (1.8M), Alexandra Gater (600K), At Home With Nikki (650K)
+  - Our competitive edge: specific dollar amounts + affiliate links (competitors don't show exact costs)
+  - 5 new video concepts proposed based on trending topics
+  - Content strategy updated with trend insights and competitor data
+- CONTENT GENERATOR RUN 2026-04-02:
+  - 4 new scripts created for April 27-30 (gap in calendar filled)
+  - Apr 27: Room by Room Ep 5 — Entryway ($41, 3 products)
+  - Apr 28: Syruvia kitchen morning routine ($53, 20% commission partner integration + floral trend)
+  - Apr 29: Budget vs premium bathroom organizer comparison ($15 vs $55)
+  - Apr 30: Canoly 3-in-1 juicer IG Reel (PARTNER COMMITMENT — must deliver)
+  - Calendar now covers full April 1-30 (20 Shorts + 2 long-form)
+  - Syruvia integrated into content for first time (Apr 28 — highest commission partner)
 
 ---
 
@@ -189,7 +239,9 @@
 - [x] Send HermanRx decline — DONE 2026-03-31 (off-niche, stay focused on home)
 - [x] Accept Rewarx partnership — DONE 2026-03-31 (50% commission via Impact, registered at rewarx.com)
 - [x] Plan Kitchen Makeover long-form video — DONE 2026-03-31 (script + generator in automation/longform/)
-- [ ] Check Awin pending invitations (login required)
+- [ ] Accept OKUN (US) on Awin — home improvement, ON-NICHE (needs browser login)
+- [ ] Send 2 email drafts: April Yang (CJ) + Rewarx account fix
+- [ ] Review Amazon Associates Operating Agreement changes (effective Apr 14)
 - [ ] Generate Kitchen Makeover video frames + audio (run generate_kitchen_makeover.py)
 - [ ] Retry IG posts 061-070 (rate limit should be clear)
 - [ ] Create Syruvia-featured kitchen content (20% commission — prioritize)
