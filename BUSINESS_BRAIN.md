@@ -18,9 +18,9 @@
 ## LIVE METRICS (update each week)
 | Metric | Value | Last Updated |
 |--------|-------|--------------|
-| YouTube subscribers | 6,710 | 2026-03-31 |
-| YouTube total views | 17,665 | 2026-03-31 |
-| YouTube videos | 95 | 2026-04-02 |
+| YouTube subscribers | 6,710 | 2026-04-03 |
+| YouTube total views | 18,357 | 2026-03-31 |
+| YouTube videos | 106 | 2026-04-02 |
 | YouTube daily poster | ✅ Working (Apr 1: v5m1cnIER4w, Apr 2: YKPHYXP5eqE) | 2026-04-02 |
 | Instagram followers | 0 | 2026-03-31 |
 | Facebook followers | 0 | 2026-03-31 |
