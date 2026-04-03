@@ -20,7 +20,8 @@
 |--------|-------|--------------|
 | YouTube subscribers | 6,710 | 2026-03-31 |
 | YouTube total views | 17,665 | 2026-03-31 |
-| YouTube videos | 93 | 2026-03-31 |
+| YouTube videos | 95 | 2026-04-02 |
+| YouTube daily poster | ✅ Working (Apr 1: v5m1cnIER4w, Apr 2: YKPHYXP5eqE) | 2026-04-02 |
 | Instagram followers | 0 | 2026-03-31 |
 | Facebook followers | 0 | 2026-03-31 |
 | Amazon affiliate revenue (MTD) | $0 confirmed | 2026-03-31 |
@@ -144,7 +145,7 @@
 - Pollinations.ai: reliable at <3 concurrent requests
 - Ken Burns animation + text overlays: professional-looking output
 - edge-tts voiceover: natural, free, multiple voices
-- GitHub Actions posting: live and scheduled (daily-poster.yml VERIFIED working)
+- GitHub Actions posting: CONFIRMED LIVE — Apr 1 (v5m1cnIER4w) + Apr 2 (YKPHYXP5eqE) both uploaded to YouTube
 - Pexels API: now integrated for BEFORE frames (real footage > AI)
 - Gmail MCP: connected, agents have FULL SEND authority
 - Claude Code web agents: 3 daily agents running with full autonomy
@@ -157,6 +158,8 @@
 - IG rate limit: retry posts 061-070 after rate limit clears
 - Best Choice Products: Join button needs manual click on Impact.com
 - Claude Code web: 3 daily session limit — can't add more agents there
+- GitHub Actions workflows can't push logs back — needs `permissions: contents: write` (FIX APPLIED 2026-04-02)
+- YouTube Studio/Analytics not accessible via browser automation — need API-based monitoring
 
 ---
 
@@ -168,6 +171,9 @@
 5. **Series content compounds** — Room by Room series drives follows, not just views.
 6. **Long-form = real money** — 15-20 affiliate links per video vs 3-4 in Shorts.
 7. **Off-niche deals hurt trust** — declined HermanRx (telehealth). Stick to home.
+8. **GitHub Actions need `permissions: contents: write`** — without it, workflows can post to YouTube but can't push logs back to repo.
+9. **Daily posting confirmed working** — 2 consecutive successful posts (Apr 1-2). Automation is reliable.
+10. **Competitor channels don't show exact prices** — this is our differentiation. Lone Fox (1.5M), Kristen McGowan (1.8M) don't put dollar amounts in hooks. We do. Keep it.
 
 ---
 
@@ -226,6 +232,13 @@
   - Apr 30: Canoly 3-in-1 juicer IG Reel (PARTNER COMMITMENT — must deliver)
   - Calendar now covers full April 1-30 (20 Shorts + 2 long-form)
   - Syruvia integrated into content for first time (Apr 28 — highest commission partner)
+- ENGAGEMENT MONITOR RUN 2026-04-02:
+  - Daily poster CONFIRMED: Apr 1 (v5m1cnIER4w) + Apr 2 (YKPHYXP5eqE) both posted to YouTube
+  - Video count now 95 (93 + 2 new automated posts)
+  - Git push for logs failing — fixed by adding `permissions: contents: write` to all 3 workflows
+  - Competitor analysis: our price-in-hook strategy is unique (Lone Fox, Kristen McGowan, Alexandra Gater don't do it)
+  - Instagram recovery strategy: resume 1 post/Saturday when rate limit clears, focus on Reels cross-posts
+  - Growth target: 10K subs by Q2 end requires ~110 net subs/week — need viral content or consistent Shorts cadence
 
 ---
 
