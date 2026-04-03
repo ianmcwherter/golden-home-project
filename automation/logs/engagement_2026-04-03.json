@@ -1,0 +1,9 @@
+{
+  "date": "2026-04-03",
+  "agent": "engagement-monitor",
+  "metrics": {},
+  "top_videos": [],
+  "comments_responded": 0,
+  "actions_taken": [],
+  "error": "('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})"
+}
