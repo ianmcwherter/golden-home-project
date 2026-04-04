@@ -1,0 +1,75 @@
+{
+  "date": "2026-04-04",
+  "agent": "engagement-monitor",
+  "metrics": {
+    "subscribers": 6710,
+    "total_views": 18373,
+    "total_videos": 106
+  },
+  "top_videos": [
+    {
+      "title": "I Used the Wrong Pantry Organizers for 3 Years #shorts #amaz",
+      "views": 110,
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "title": "Kitchen Products I Use Every Single Day (Honest Review) #sho",
+      "views": 72,
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "title": "Dog Owners: These Amazon Products Will Change Your Life #sho",
+      "views": 69,
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "title": "My Spring Home Refresh \u2014 All From Amazon #shorts #amazonfind",
+      "views": 60,
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "title": "I Transformed My Cluttered Kitchen Counter For $47 #shorts #",
+      "views": 58,
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "title": "These Products Fixed My Chaotic Morning Routine #shorts #ama",
+      "views": 55,
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "title": "5 Amazon Products That Actually Helped Me Sleep Better #shor",
+      "views": 53,
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "title": "The Golden Home Project All-Time Greatest Hits #shorts #amaz",
+      "views": 48,
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "title": "I Bought These for My Parents. They Use Them Every Day. #sho",
+      "views": 38,
+      "likes": 0,
+      "comments": 1
+    },
+    {
+      "title": "Under $50 Upgrades That Make Your Home Look Way More Expensi",
+      "views": 11,
+      "likes": 0,
+      "comments": 1
+    }
+  ],
+  "comments_responded": 0,
+  "actions_taken": [
+    "Updated BUSINESS_BRAIN.md metrics"
+  ]
+}
