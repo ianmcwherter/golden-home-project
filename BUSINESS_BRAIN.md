@@ -19,9 +19,10 @@
 | Metric | Value | Last Updated |
 |--------|-------|--------------|
 | YouTube subscribers | 6,710 | 2026-04-03 |
-| YouTube total views | 18,357 | 2026-03-31 |
-| YouTube videos | 106 | 2026-04-02 |
+| YouTube total views | 18,357 | 2026-04-03 |
+| YouTube videos | 106 | 2026-04-03 |
 | YouTube daily poster | ✅ Working (Apr 1: v5m1cnIER4w, Apr 2: YKPHYXP5eqE) | 2026-04-02 |
+| YouTube OAuth token | ✅ Refreshed 2026-04-03 | 2026-04-03 |
 | Instagram followers | 0 | 2026-03-31 |
 | Facebook followers | 0 | 2026-03-31 |
 | Amazon affiliate revenue (MTD) | $0 confirmed | 2026-03-31 |
@@ -167,6 +168,8 @@
 - Claude Code web: 3 daily session limit — can't add more agents there
 - GitHub Actions workflows can't push logs back — needs `permissions: contents: write` (FIX APPLIED 2026-04-02)
 - YouTube Studio/Analytics not accessible via browser automation — need API-based monitoring
+- YouTube OAuth token expires ~7 days — needs periodic refresh (last refreshed 2026-04-03)
+- macOS Desktop folder TCC permission: Claude Code can't access ~/Desktop/ — use GitHub API workaround or restart session after granting Full Disk Access
 
 ---
 
@@ -260,6 +263,13 @@
   - Best Choice Products Join blocked by Impact.com Vue.js isTrusted check — needs manual click
   - 3 new content scripts created: May 1 (floral kitchen $67), May 3 (Dreame robot vacuum), May 4 (glass pantry $120 + Syruvia)
   - Content pipeline now extends through May 4
+  - YouTube OAuth token REFRESHED via browser OAuth flow — new Bearer token + refresh_token obtained
+  - YT_TOKEN_JSON GitHub secret UPDATED (2026-04-03T22:45:39Z)
+  - Engagement Monitor re-run CONFIRMED SUCCESS with new token — real analytics flowing again
+  - Channel stats confirmed: 6,710 subs, 18,357 views, 106 videos
+  - Top performing video: "I Used the Wrong Pantry Organizers for 3 Years" — 109 views
+  - Desktop folder still TCC-blocked (macOS permission cached per-process, won't apply until restart)
+  - All YouTube automation (Daily Poster, Engagement Monitor, Content Generator) now auth'd and operational
 
 ---
 
@@ -278,9 +288,14 @@
 - [ ] Promote Dreame Easter Sale in upcoming content (60% off thru Apr 12, high-AOV)
 - [ ] Feature Promeed silk pillowcases in bedroom transformation content (code PM20)
 - [ ] Review Amazon Associates Operating Agreement changes (effective Apr 14)
-- [ ] Generate Kitchen Makeover video frames + audio (run generate_kitchen_makeover.py)
+- [x] Refresh YouTube OAuth token — DONE 2026-04-03 (YT_TOKEN_JSON secret updated)
+- [x] Verify Engagement Monitor with new token — DONE 2026-04-03 (SUCCESS — real data)
+- [ ] Generate Kitchen Makeover video frames + audio (run generate_kitchen_makeover.py — save to /tmp/)
+- [ ] Upload Kitchen Makeover to YouTube (scheduled April 8)
+- [ ] Create Canva thumbnail for Kitchen Makeover (4 candidates generated, need final selection)
 - [ ] Retry IG posts 061-070 (rate limit should be clear)
 - [ ] Create Syruvia-featured kitchen content (20% commission — prioritize)
+- [ ] Refresh YouTube OAuth token again ~2026-04-10 (7-day expiry)
 
 ---
 *This file is automatically updated by agents. Human review recommended weekly.*
