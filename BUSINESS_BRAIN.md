@@ -107,7 +107,7 @@
 | April Shorts 001-013, 015 | ✅ Generated + in repo | /videos/transformation/ |
 | April Shorts 014, 016 | ✅ Generated + in repo | /videos/transformation/ |
 | April Shorts posting | ✅ Automated | GitHub Actions daily-poster.yml |
-| Long-form video (Kitchen) | ✅ Script + generator ready | automation/longform/ — 7min, 17 affiliate links, April 8 |
+| Long-form video (Kitchen) | ✅ VIDEO COMPLETE + THUMBNAIL | Desktop folder + automation/longform/ — 4:58min, 17 affiliate links, April 8 upload |
 | Long-form video (Apt tour) | ❌ Not started | April 22 scheduled |
 | Apr 27 Short (Ep 5 Entryway) | ✅ Script ready | automation/scripts/script-2026-04-27.py |
 | Apr 28 Short (Syruvia kitchen) | ✅ Script ready | automation/scripts/script-2026-04-28.py — 20% commission partner |
@@ -290,9 +290,9 @@
 - [ ] Review Amazon Associates Operating Agreement changes (effective Apr 14)
 - [x] Refresh YouTube OAuth token — DONE 2026-04-03 (YT_TOKEN_JSON secret updated)
 - [x] Verify Engagement Monitor with new token — DONE 2026-04-03 (SUCCESS — real data)
-- [ ] Generate Kitchen Makeover video frames + audio (run generate_kitchen_makeover.py — save to /tmp/)
+- [x] Generate Kitchen Makeover video + thumbnail — DONE 2026-04-04 (saved to Desktop + repo)
 - [ ] Upload Kitchen Makeover to YouTube (scheduled April 8)
-- [ ] Create Canva thumbnail for Kitchen Makeover (4 candidates generated, need final selection)
+- [x] Create Canva thumbnail for Kitchen Makeover — DONE 2026-04-04 (Candidate 2, design DAHF2va2miI)
 - [ ] Retry IG posts 061-070 (rate limit should be clear)
 - [ ] Create Syruvia-featured kitchen content (20% commission — prioritize)
 - [ ] Refresh YouTube OAuth token again ~2026-04-10 (7-day expiry)
@@ -300,3 +300,21 @@
 ---
 *This file is automatically updated by agents. Human review recommended weekly.*
 *Agents: always read this file first. Always update relevant sections. Commit to claude/ branch.*
+
+### CEO SESSION 2026-04-04:
+- Kitchen Makeover long-form video REGENERATED (previous lost to /tmp/ cleanup)
+  - 28 frames via Pollinations.ai + 7 voiceover segments via edge-tts
+  - Composed via ffmpeg (moviepy had PIL compatibility bug)
+  - Final: 4:58 min, 12.3MB, 1920x1080, 24fps
+  - Saved to: ~/Desktop/Golden Home Project Content files/Kitchen_Makeover_LongForm.mp4
+  - Also saved: thumbnail.jpg + description.txt with 17 affiliate links
+- 4 Canva YouTube thumbnail candidates generated, Candidate 2 selected (diagonal split, $148 centered)
+  - Exported to JPG 1280x720, saved to Desktop folder
+  - Design ID: DAHF2va2miI in Canva
+- Generator scripts committed to repo: automation/longform/ (generate + compose + description)
+- Desktop folder TCC access CONFIRMED WORKING (was blocked last session)
+- Best Choice Products Join button still blocked by Vue.js isTrusted — NEEDS MANUAL CLICK
+- OKUN on Awin — user denied browser navigation (revisit later)
+- Gmail: 0 unread emails (inbox clear)
+- Content Generator workflow still failing (ref:claude in checkout) — was already fixed, needs next scheduled run to verify
+- Established new protocol: always save work to BOTH repo AND Desktop folder immediately
