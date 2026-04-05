@@ -20,7 +20,7 @@
 |--------|-------|--------------|
 | YouTube subscribers | 6,710 | 2026-04-04 |
 | YouTube total views | 18,373 | 2026-04-03 |
-| YouTube videos | 106 | 2026-04-03 |
+| YouTube videos | 107 (incl. Kitchen Makeover long-form) | 2026-04-04 |
 | YouTube daily poster | ✅ Working (Apr 1: v5m1cnIER4w, Apr 2: YKPHYXP5eqE) | 2026-04-02 |
 | YouTube OAuth token | ✅ Refreshed 2026-04-03 | 2026-04-03 |
 | Instagram followers | 0 | 2026-03-31 |
@@ -107,7 +107,7 @@
 | April Shorts 001-013, 015 | ✅ Generated + in repo | /videos/transformation/ |
 | April Shorts 014, 016 | ✅ Generated + in repo | /videos/transformation/ |
 | April Shorts posting | ✅ Automated | GitHub Actions daily-poster.yml |
-| Long-form video (Kitchen) | ✅ VIDEO COMPLETE + THUMBNAIL | Desktop folder + automation/longform/ — 4:58min, 17 affiliate links, April 8 upload |
+| Long-form video (Kitchen) | ✅ UPLOADED TO YOUTUBE | Video ID: UDZ14ww196k — 4:58min, 17 affiliate links, thumbnail set, affiliate comment posted |
 | Long-form video (Apt tour) | ❌ Not started | April 22 scheduled |
 | Apr 27 Short (Ep 5 Entryway) | ✅ Script ready | automation/scripts/script-2026-04-27.py |
 | Apr 28 Short (Syruvia kitchen) | ✅ Script ready | automation/scripts/script-2026-04-28.py — 20% commission partner |
@@ -291,7 +291,7 @@
 - [x] Refresh YouTube OAuth token — DONE 2026-04-03 (YT_TOKEN_JSON secret updated)
 - [x] Verify Engagement Monitor with new token — DONE 2026-04-03 (SUCCESS — real data)
 - [x] Generate Kitchen Makeover video + thumbnail — DONE 2026-04-04 (saved to Desktop + repo)
-- [ ] Upload Kitchen Makeover to YouTube (scheduled April 8)
+- [x] Upload Kitchen Makeover to YouTube — DONE 2026-04-04 (Video ID: UDZ14ww196k, thumbnail set, affiliate comment posted)
 - [x] Create Canva thumbnail for Kitchen Makeover — DONE 2026-04-04 (Candidate 2, design DAHF2va2miI)
 - [ ] Retry IG posts 061-070 (rate limit should be clear)
 - [ ] Create Syruvia-featured kitchen content (20% commission — prioritize)
@@ -318,3 +318,10 @@
 - Gmail: 0 unread emails (inbox clear)
 - Content Generator workflow still failing (ref:claude in checkout) — was already fixed, needs next scheduled run to verify
 - Established new protocol: always save work to BOTH repo AND Desktop folder immediately
+- Kitchen Makeover long-form UPLOADED to YouTube: Video ID UDZ14ww196k
+  - Title: "I Transformed My Entire Kitchen for $148 — Every Product Linked"
+  - Thumbnail set (Canva diagonal split design)
+  - Affiliate comment posted with all 17 Amazon links + Syruvia (comment ID: Ugz0gGQu3-c2anCCR4J4AaABAg)
+  - Description has timestamps, all 17 affiliate links, Syruvia link, hashtags
+  - This is our HIGHEST-REVENUE single video (17 affiliate links, 20% Syruvia commission)
+  - Comment pinning needs YouTube Studio (API doesn't support pin via REST)
