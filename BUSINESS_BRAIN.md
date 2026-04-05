@@ -20,10 +20,11 @@
 |--------|-------|--------------|
 | YouTube subscribers | 6,710 | 2026-04-05 |
 | YouTube total views | 18,609 | 2026-04-03 |
-| YouTube videos | 107 (incl. Kitchen Makeover long-form) | 2026-04-04 |
+| YouTube videos | 109 (incl. Kitchen + Bathroom Makeover long-forms) | 2026-04-05 |
 | YouTube daily poster | ✅ Working (Apr 1: v5m1cnIER4w, Apr 2: YKPHYXP5eqE) | 2026-04-02 |
 | YouTube OAuth token | ✅ Refreshed 2026-04-03 | 2026-04-03 |
-| Instagram followers | 0 | 2026-03-31 |
+| Instagram followers | 0 | 2026-04-05 |
+| Instagram media count | 120 | 2026-04-05 |
 | Facebook followers | 0 | 2026-03-31 |
 | Amazon affiliate revenue (MTD) | $0 confirmed | 2026-03-31 |
 | Active affiliate platforms | Amazon, Impact, CJ, Awin | 2026-03-31 |
@@ -108,6 +109,7 @@
 | April Shorts 014, 016 | ✅ Generated + in repo | /videos/transformation/ |
 | April Shorts posting | ✅ Automated | GitHub Actions daily-poster.yml |
 | Long-form video (Kitchen) | ✅ UPLOADED TO YOUTUBE | Video ID: UDZ14ww196k — 4:58min, 17 affiliate links, thumbnail set, affiliate comment posted |
+| Long-form video (Bathroom) | ✅ UPLOADED TO YOUTUBE | Video ID: ELIWkGUDTPQ — 3:28min, 15 affiliate links, thumbnail set, affiliate comment posted |
 | Long-form video (Apt tour) | ❌ Not started | April 22 scheduled |
 | Apr 27 Short (Ep 5 Entryway) | ✅ Script ready | automation/scripts/script-2026-04-27.py |
 | Apr 28 Short (Syruvia kitchen) | ✅ Script ready | automation/scripts/script-2026-04-28.py — 20% commission partner |
@@ -169,7 +171,8 @@
 - GitHub Actions workflows can't push logs back — needs `permissions: contents: write` (FIX APPLIED 2026-04-02)
 - YouTube Studio/Analytics not accessible via browser automation — need API-based monitoring
 - YouTube OAuth token expires ~7 days — needs periodic refresh (last refreshed 2026-04-03)
-- macOS Desktop folder TCC permission: Claude Code can't access ~/Desktop/ — use GitHub API workaround or restart session after granting Full Disk Access
+- macOS Desktop folder: ✅ ACCESSIBLE (fixed 2026-04-04)
+- Meta app in DEVELOPMENT mode — only test users can see IG posts (need to submit for App Review for public access)
 
 ---
 
@@ -293,7 +296,8 @@
 - [x] Generate Kitchen Makeover video + thumbnail — DONE 2026-04-04 (saved to Desktop + repo)
 - [x] Upload Kitchen Makeover to YouTube — DONE 2026-04-04 (Video ID: UDZ14ww196k, thumbnail set, affiliate comment posted)
 - [x] Create Canva thumbnail for Kitchen Makeover — DONE 2026-04-04 (Candidate 2, design DAHF2va2miI)
-- [ ] Retry IG posts 061-070 (rate limit should be clear)
+- [x] IG rate limit cleared — Meta OAuth refreshed 2026-04-04, 2 Reels posted successfully (trans_003, trans_004)
+- [ ] Continue IG Reels: 1/day max to rebuild algo trust
 - [ ] Create Syruvia-featured kitchen content (20% commission — prioritize)
 - [ ] Refresh YouTube OAuth token again ~2026-04-10 (7-day expiry)
 
@@ -325,3 +329,23 @@
   - Description has timestamps, all 17 affiliate links, Syruvia link, hashtags
   - This is our HIGHEST-REVENUE single video (17 affiliate links, 20% Syruvia commission)
   - Comment pinning needs YouTube Studio (API doesn't support pin via REST)
+
+### CEO SESSION 2026-04-05 (Week 2 kickoff):
+- WEEK 1 BUSINESS REVIEW completed — $0 revenue, but infrastructure fully operational
+- Bathroom Makeover long-form video GENERATED + UPLOADED to YouTube
+  - Video ID: ELIWkGUDTPQ, 3:28 min, 15 affiliate links, $297 total
+  - Thumbnail set (Canva design DAHGBYkD0dY)
+  - Affiliate comment posted (Ugyrr36AqC6PhjePKQ14AaABAg)
+  - All files backed up to Desktop folder
+  - Generator committed to repo: automation/longform/generate_bathroom_makeover.py
+- Meta/Instagram OAuth REFRESHED — long-lived token (60-day expiry ~June 3)
+  - META_ACCESS_TOKEN GitHub secret updated
+  - IG posting confirmed working: 2 Reels published (trans_003 + trans_004)
+  - IG strategy: max 1/day to rebuild algorithm trust (bulk posting killed us)
+  - Meta tokens backed up to Desktop folder
+- Rewarx reply SENT to Keble (50% commission — registered at goldenhomeprojectllc@gmail.com)
+- Content Generator workflow CONFIRMED WORKING (was failing, now fixed)
+- Daily Poster CONFIRMED: Apr 5 video posted successfully
+- All 3 GitHub Actions workflows operational: Daily Poster, Content Generator, Engagement Monitor
+- NOW HAVE 2 long-form videos with 32 total affiliate links (Kitchen 17 + Bathroom 15)
+- Instagram: 120 media posts, 0 followers — algorithm trust rebuild in progress
